@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        html 的標籤，重點在於語意，而非樣式。
+        雖然不同標籤顯示於瀏覽器時會有不同樣式，但是那些樣式並沒有實質上的意義，因為真正的樣式是由 css 負責。
+        html 顯示於瀏覽器上的樣式，目的在於方便辨識。
+    -->
+
+    <!-- 
+        標題標籤：h1 ~ h6 共有六級標題標籤，
+        h1 最重要，h6 最不重要。
+        h1 標籤的重要性，在 html 文檔中僅次於 title 標籤。
+        通常情況下，一個 html 文檔中只會出現一個 h1 標籤。h1 ~ h3 較常使用，而 h4 ~ h6 幾乎不使用。
+        標題標籤都是塊元素（block element）
+        塊元素（block element）:在頁面中獨佔一行的元素稱為塊元素。
+    -->
+    <h1>This is h1 tags.</h1>
+    <h2>This is h2 tags.</h2>
+    <h3>This is h3 tags.</h3>
+    <h4>This is h4 tags.</h4>
+    <h5>This is h5 tags.</h5>
+    <h6>This is h6 tags.</h6>
+
+    <!-- 標題組 hgroup：將標題標籤分組-->
+    <hgroup>
+        <h1>今天的演講主題有兩個</h1>
+        <h2>主題一</h2>
+        <h2>主題二</h2>
+    </hgroup>
+
+    <!--
+        p 標籤：表示頁面中的一個段落。
+        p 標籤是塊元素（block element）
+    -->
+    <p>這是一個段落。</p>
+
+    <!--
+        em 標籤用來強調、重點。
+        em 標籤是行內元素（inline element）
+        行內元素（inline element）：相較於塊元素，在頁面中不會獨佔一行的元素稱作行內元素。
+    -->
+    <p>他是一位<em>令人敬重的</em>em>前輩</p>
+
+    <!--
+        strong 標籤也用來表示強調、重點
+        strong 標籤是行內元素（inline element）
+    -->
+    <p>請<strong>今晚五點前</strong>strong>務必繳交報告。</p>
+
+    <!--
+        blockquote 標籤表示一個引用
+        blockquote 標籤是塊元素（block element）
+    -->
+    <p>子曰：<blockquote>有朋自遠方來，不亦樂乎。</blockquote></p>
+
+    <!--
+        q 標籤表示一個短引用
+        q 標籤是行內元素（inline element）
+    -->
+    <p>老闆說：<q>今天下午要談重要的生意。</q></p>
+
+    <!--
+        br 標籤表示換行
+    -->
+    <p>床前明月光<br>疑似地上霜<br>舉頭望明月<br>低頭思故鄉</p>
+
+</body>
+</html>
+
+<!--
+    重點整理：
+    標籤注重語意、而非顯示。
+    標籤分為兩類：塊元素、行內元素。
+-->
