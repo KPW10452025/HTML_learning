@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    
+    <!--
+        列表 list
+        在 html 中有三種列表：
+        1.有序料表
+        2.無序列表
+        3.定義列表
+
+        有序列表：使用 ol 標籤來建立有序列表
+            使用 li 表示列表項目
+        
+        無序列表：使用 ul 標籤來建立有序列表
+            使用 li 表示列表項目
+
+        定義列表：使用 dl 標籤來建立定義列表
+            使用 dt 來表示定義的內容
+            使用 dd 來對內容進行解釋說明
+
+        注意：在瀏覽器中雖然列表會顯示記號、編號，但 html 重語意而非顯示。
+        瀏覽器中顯示的記號、編號能藉由 css 做美化。
+        有序、無序的差異不大。
+        經常使用的是無序。
+
+        列表標籤都是塊元素，每個標籤都會獨佔一行，導致在瀏覽器都是直向顯示。
+        但是經由 css 修飾就能變成橫向導航欄 navbar
+
+        列表之間可以互相嵌套
+    -->
+
+    <ol> 有序列表：步驟
+        <li>沖</li>
+        <li>脫</li>
+        <li>泡</li>
+        <li>蓋</li>
+        <li>送</li>
+    </ol>
+
+    <ul> 無序列表：購物清單 
+        <li>洗衣機</li>
+        <li>冰箱</li>
+        <li>電視</li>
+    </ul>
+
+    <dl> 定義列表：產品目錄
+        <dt>Ｍac Book Air</dt>
+        <dd>輕巧、易攜帶、省電</dd>
+        <dt>Ｍac Book Pro</dt>
+        <dd>強大效能、旗艦功能</dd>
+    </dl>
+
+    <ol> 不同列表標籤互相嵌套
+        <li>iPhone 13
+            <ul>
+                <li>iPhone 13</li>
+                <li>iPhone 13 Pro</li>
+                <li>iPhone 13 Pro Max</li>
+            </ul>
+        </li>
+        <li>iPhone 12
+            <ul>
+                <li>iPhone 12</li>
+                <li>iPhone 12 mini</li>
+            </ul>
+        </li>
+    </ol>
+
+</body>
+</html>
