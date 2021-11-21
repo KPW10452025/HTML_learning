@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--
+        audio 標籤：向頁面引入外部音頻文件
+            替換元素
+            默認情況下，當音頻引入網頁時，不允許用戶端控制(無法播放無法停止等)
+
+            屬性：
+                src 音頻的路徑
+                controls 顯示控制面板：讓頁面使用者獲得音頻控制權。此屬性不需輸入值。
+                autoplay 自動播放。大部分瀏覽器不支援此功能（chrome 有支援）
+                    通常為了良好用戶體驗，現今已經很少有網站會自動播放音樂
+                loop 讓音樂循環播放
+    -->
+    <audio src="./026_audio_video/youtube_free_music.mp3" controls loop></audio>
+
+    <!--
+        除了 src 能指定音頻來源以外，還能使用 source 來指定音頻來源
+        此寫法有兩個好處：
+            一、當瀏覽器版本不支援 audio 標籤時，會顯示提示文字（IE9以下的版本不支援 audio 標籤）
+            二、當瀏覽器不支援 .mp3 檔案時，可以使用多個 source 標籤加入多種音檔（但現今的瀏覽器都能辨認 .mp3）
+    -->
+    <audio controls>
+        <p>對不起，您的瀏覽器不支持音樂播放。</p>
+        <p>若要有更好的使用環境，建議升級或更換瀏覽器。</p>
+        <source src="./026_audio_video/youtube_free_music.mp3">
+        <source src="./026_audio_video/youtube_free_music.ogg"> 
+    </audio>
+
+    <!--
+        若要讓 IE8 和更低版本的瀏覽器使用音樂播放時怎麼辦？
+        embed 標籤：會自動播放，必須主動指定 width height type
+    -->
+    <embed src="./026_audio_video/youtube_free_music.mp3" type="audio/mp3" width="400" height="200" >
+
+    <!-- 最佳寫法 -->
+    <audio controls>
+        <source src="./026_audio_video/youtube_free_music.mp3">
+        <source src="./026_audio_video/youtube_free_music.ogg"> 
+        <embed src="./026_audio_video/youtube_free_music.mp3" type="audio/mp3" width="400" height="200" >
+    </audio>
+
+    <!--
+        video 標籤：向頁面引入外部視頻文件，使用方式基本根 audio 大同小異
+            替換元素
+
+            屬性：
+                src 音頻的路徑
+                controls 顯示控制面板：讓頁面使用者獲得音頻控制權。此屬性不需輸入值。
+                loop 讓音樂循環播放
+    -->
+
+    <!-- 基礎寫法 -->
+    <video src="./026_audio_video/allday.mp4" controls loop ></video>
+
+    <!-- 改良寫法 -->
+    <video controls>
+        <source src="./026_audio_video/allday.mp4">
+    </video>
+
+    <!-- 解決IE8兼容性問題寫法 -->
+    <video controls>
+        <source src="./026_audio_video/allday.mp4">
+        <embed src="./026_audio_video/allday.mp4" type="video/mp4">
+    </video>
+
+    <!--
+        以上方法會有一個問題，必須把影片放到雲端伺服器中，由於音頻或是視頻非常佔容量，不太建議用以上方法
+        可以直接使用 iframe 標籤
+        附註：若是要貼上 youtube 影片，youtube 有提供嵌入程式碼（對著影片點右鍵）
+    -->
+    <iframe width="1424" height="595" src="https://www.youtube.com/embed/KTLE0SpUv9g?list=PLmOn9nNkQxJFs5KfK5ihVgb8nNccfkgxn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</body>
+</html>
