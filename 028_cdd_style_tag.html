@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+</head>
+<body>
+
+    <!--
+        use css to decorate to word
+        - 方法一：在標籤中使用 style 屬性
+            缺點：這種方法只能對一個標籤產生作用，如果多個標籤就要逐一編寫，不方便維護與更新
+            開發時勁量不要使用 style 方法
+        - 方法二：style 標籤（內部樣式表）
+            優點：能指定標籤全部一起作變更，修改更新時只需要修改 style 就能修改所有特定標籤
+            缺點：由於是內部樣式表，所以只能影響單一個 html 文件。無法作用於多個 html 文件
+    -->
+    <style>
+        p{
+            color: crimson;
+            font-size: large;
+        }
+    </style>
+
+    <p>潯陽江頭夜送客，楓葉荻花秋瑟瑟。</p>
+    <p>主人下馬客在船，舉酒欲飲無管弦。</p>
+    <p>醉不成歡慘將別，別時茫茫江浸月。</p>
+    <p>忽聞水上琵琶聲，主人忘歸客不發。</p>
+
+</body>
+</html>
