@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    h1{ color: darkslateblue; }
+
+    p{ color: green; }
+
+    /* 可以透過 id 與 # 的配合單獨更改特定單一目標 */
+    /* 注意：id 必須是「唯一」否則很容易出錯（雖然 html 本身不會報錯，但未來搭配 JS 時會出問題） */
+    #p002{ color: red; }
+
+    /* 可以透過 class 與 . 的配合更改特定多目標 */
+    /* 一個標籤能同時擁有多個 clss，使用空格格開即可 */
+    .banana{ color: yellowgreen; }
+    .fish{ font-size: larger; }
+
+    /* 通配選擇器：*{}，即為全選 */
+    *{ font-weight: 600; }
+</style>
+<body>
+    <h1>靜夜思</h1>
+    <p id="p001" class="apple">床前明月光</p>
+    <p id="p002" class="apple">疑似地上霜</p>
+    <p id="p003" class="apple">舉頭望明月</p>
+    <p id="p004" class="apple">低頭思故鄉</p>
+
+    <p id="p005" class="orange fish">相見時難別亦難，</p>
+    <p id="p006" class="orange">東風無力百花殘。</p>
+    <p id="p007" class="banana fish">春蠶到死絲方盡，</p>
+    <p id="p008" class="school">蠟炬成灰淚始干。</p>
+    <p id="p009" class="fish">曉鏡但愁雲鬢改，</p>
+    <p id="p010" class="banana">夜吟應覺月光寒。</p>
+    <p id="p011" class="banana">蓬山此去無多路，</p>
+    <p id="p012" class="fish">青鳥殷勤為探看。</p>
+
+
+</body>
+</html>
