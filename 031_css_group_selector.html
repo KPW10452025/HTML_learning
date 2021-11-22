@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    /* 選擇條件： class="sentence" */
+    .sentence{ color: green; } 
+
+    /* 選擇條件： 既是 div 也是 class="sentence" */
+    /* 交集選擇器 */
+    div.sentence{ font-size: larger; } 
+
+    /* 選擇條件： 全體 h1 與全體 div */
+    /* 聯集選擇器 */
+    h1, div{ font-weight: 100; }
+</style>
+<body>
+    <div class="sentence">This is div tag.</div>
+    <p class="sentence">This is p tag.</p>
+    <div>This is div tag.</div>
+    <p>This is p tag.</p>
+    <h1>This is h1 tag.</h1>
+</body>
+</html>
