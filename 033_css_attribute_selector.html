@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h3[title]{color: blue;}
+        /* 標籤[屬性]{聲明} */
+        /* 有 title 屬性的 h3 標籤：變成藍色 */
+
+        h3[class="author_info_字"]{color: blueviolet;}
+        /* 標籤[屬性=屬性值]{聲明} */
+        /* 有 class 屬性並且等於 "author_info_字" 的 h3 標籤：文字變成藍紫色 */
+
+        h3[class="author_info_號"]{color:brown;}
+        /* 有 class 屬性並且等於 "author_info_號" 的 h3 標籤：文字變成藍棕色 */
+
+        h3[class^="author_info"]{text-decoration:underline;}
+        /* 標籤[屬性^=屬性值]{聲明} */
+        /* 有 class 屬性並且以 "author_info" 開頭的 h3 標籤：文字加底線 */
+
+        p[class$="text"]{color: green;}
+        /* 標籤[屬性$=屬性值]{聲明} */
+        /* 有 class 屬性並且以 "text" 結尾的 p 標籤：文字變成綠色 */
+
+        p[class*="ext"]{background-color:lightblue;}
+        /* 標籤[屬性*=屬性值]{聲明} */
+        /* 有 class 屬性並且包含 "ext" 的 p 標籤：底色變成淡藍色 */
+    </style>
+</head>
+<body>
+    <h1>唐詩</h1>
+    <h2 class="author">李白</h2>
+    <h3 class="author_info_字">字：太白</h3>
+    <h3 class="author_info_號">號：青蓮居士</h3>
+    <h3 title="靜夜思" class="poem_title">靜夜思</h3>
+    <p class="1_text">床前明月光</p>
+    <p class="2_text">疑似地上霜</p>
+    <p class="3_text">舉頭望明月</p>
+    <p class="4_text">低頭思故鄉</p>
+    <h2 class="author">杜甫</h2>
+    <h3 class="author_info_字">字：子美</h3>
+    <h3 class="author_info_號">號：少陵野老</h3>
+    <h3 title="八陣圖" class="poem_title">八陣圖</h3>
+    <p class="text_1">功蓋三分國</p>
+    <p class="text_2">名成八陣圖</p>
+    <p class="text_3">江流石不轉</p>
+    <p class="text_4">遺恨失吞吳</p>
+</body>
+</html>
