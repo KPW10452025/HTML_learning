@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-classes Pseudo-elements</title>
+    <style>
+        /* I want to change the 1st li into red. How to do it? */
+        /* ul > li{color: red;} */
+        /* This method will change all the li into red. This is not what i want. */
+        
+        /* How about add class="red" in the 1st li */
+        /* li.red{color: red;} */
+        /* When we add 0ro in the ul, now the 1st in ul is the second element. */
+        /* So every time I add new element I need to change the content of the class. */
+
+        /* What I need is something it is able to automatically choose the first li. */
+
+        /* Pseudo-classes 偽類 */
+        /* Pseudo-classes selector is able to select a "special state" element. */
+        /*
+            :first-child Select the first child-element.
+            :last-child Select the last child-element.
+            :nth-child() Select the nth child-element.
+        */
+
+        ul > li:first-child{color: red;}
+
+        ul > li:last-child{color: orange;}
+
+        ul > li:nth-child(3){color:green;}
+        ul > li:nth-child(n){font-weight: bold;}
+        /* "n" means selecting all the elements. */
+
+        /* ul > li:nth-child(2n){font-weight: bold;} */
+        /* ul > li:nth-child(even){font-weight: bold;} */
+
+        /* ul > li:nth-child(2n+1){font-weight: bold;} */
+        /* ul > li:nth-child(odd){font-weight: bold;} */
+
+        /*
+            Here has a problem.
+            When the first element in ul is not li, it'll no effect.
+            The first element in second ul is not li, it's span.
+            So the function "ul > li:first-child{color: red;}" doesn't have any effect.
+            :first-of-type
+            :last-of-type
+            :nth-of-type()
+        */
+        ul > li:first-of-type{text-decoration:underline;}
+        ul > li:last-of-type{text-decoration:underline;}
+        ul > li:nth-of-type(4){text-decoration:line-through;}
+
+        /* :not() except */
+        ul >li:not(:nth-of-type(5)){background-color:lightblue;;}
+        /* All the li in ul change the back ground color into lightblue except 5th li. */
+
+    </style>
+</head>
+<body>
+    <!-- Pseudo-classes 偽類選擇器 -->
+        <!-- 前面帶一個: -->
+    <!-- Pseudo-elements 偽元素選擇器 -->
+        <!-- 前面帶兩個:: -->
+    <ul>
+        <li>0ro</li>
+        <li class="red">1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+        <li>4th</li>
+        <li>5th</li>
+    </ul>
+
+    <ul>
+        <span>This is span.</span>
+        <li>0ro</li>
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+        <li>4th</li>
+        <li>5th</li>
+    </ul>
+</body>
+</html>
