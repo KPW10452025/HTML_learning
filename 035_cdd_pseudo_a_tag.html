@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo in a tag</title>
+    <style>
+        /* 默認情況下，為開啟過的 a 標籤是藍色的。 */
+        /* :link 用來表示未訪問過的連結（正常的連結） */
+        /* :link 可以設定未訪問過連結的顏色 */
+        a:link{color: red;}
+
+        /* 有放大效果 */
+        /* a:link{color: red; font-size: x-large;} */
+
+        /* :visited 可以設定訪問過連結的顏色 */
+        a:visited{color: orange;}
+        
+        /* 沒有放大效果 */
+        /* a:visited{color: orange; font-size: x-large;} */
+        /*
+            為何在 :visited 中的聲明除了顏色以外都無效果？
+            因為隱私，所以 :visited 只能修改顏色
+        */
+
+        /* 因為 :visited 會牽扯到用戶隱私問題，所以通常很少會對其做設定更改 */
+        
+        /* :hover 設定當鼠標接觸到時的反應 */
+        /* :hover 並非 a 標籤專屬 */
+        a:hover{color: blueviolet; font-size: large;}
+
+        /* :active 設定當鼠標點擊時的反應 */
+        /* :active 並非 a 標籤專屬 */
+        a:active{color: cornflowerblue; font-weight: bold;font-size: larger;}
+    </style>
+</head>
+<body>
+    <a href="http://www.google.com" target="blank">Google 有訪問過是紫色的</a>
+    <br>
+    <a href="http://www.google123592374.com" target="blank">Google 沒有訪問過是藍色的</a>
+</body>
+</html>
