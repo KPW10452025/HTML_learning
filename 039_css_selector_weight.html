@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector Weights</title>
+    <style>
+        *{
+            color: gray;
+        }
+
+        div{
+            color: yellow;
+        }
+
+        .red{
+            color: red;
+        }
+
+        #box{
+            color: green
+        }
+
+        /* 
+        樣式衝突：不同選擇器，選擇了相同的元素，聲明不同的值，此時會發生衝突
+
+        發生樣式衝突時，會由選擇器的權重（優先級）決定樣式
+
+        選擇器的權重（數字越高越優先）：
+            !important：最高優先級
+            內聯樣式：1.0.0.0
+            id 選擇器：0.1.0.0
+            類和偽類選擇器：0.0.1.0
+            元素選擇器：0.0.0.1
+            通配選擇器：0.0.0.0
+            繼承的樣式：無優先級
+
+        以上線的實例說明：
+            <head>裡面的選擇器：
+                *{} 是通配選擇器，優先級：0.0.0.0
+                div{} 是元素選擇器，優先級：0.0.0.1
+                .red{} 是類和偽類選擇器，優先級：0.0.1.0
+                #box{} 是 id 選擇器，優先級：0.1.0.0
+            <body>裡面<div>裡面：
+                <div style="color"> 是內聯樣式，優先級：1.0.0.0
+            所以最後的效果是 color: blue
+
+            這也是為何很少使用內聯樣式設定 css，因為優先級太高，之後較難統一修改
+        */
+
+        /* 優先級可以累加 */
+        #box{ background-color: lightblue; } /* 優先級：0.1.0.0 */
+        div#box{ background-color: lightcoral; } /* 優先級：0.1.0.1 */
+
+        /* 優先級相同時，排在後面的優先 */
+        #car{ color: blue; } /* 優先級：0.1.0.0 */
+        #car{ color: aqua; } /* 優先級：0.1.0.0 */
+
+        /* !important */
+        #water{ color: brown; } /* 優先級：0.1.0.0 */
+        #water{ color: gray !important; } /* 最高優先級 */
+        /* 注意：!important 一定要慎用，因為其優先級就是最高，任何方法都無法覆蓋其優先級 */
+
+    </style>
+</head>
+<body>
+    <div id="box" class="red" style="color: blue;" >這是 div</div>
+    <div id="box" class="red" >這是 div</div>
+    <div id="car" class="red" >這是 div</div>
+    <div id="water" class="red" style="color: blueviolet;">這是 div</div>
+    
+</body>
+</html>
