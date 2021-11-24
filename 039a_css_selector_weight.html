@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a:link{color: pink;} /* 是類和偽類選擇器，優先級：0.0.1.0 */
+        a:visited{color: red} /* 是類和偽類選擇器，優先級：0.0.1.0 */
+        a:hover{color: green;} /* 是類和偽類選擇器，優先級：0.0.1.0 */
+        a:active{color: purple} /* 是類和偽類選擇器，優先級：0.0.1.0 */ 
+        /*
+        以上四個優先級都是：0.0.1.0，但依排序 :active 優先級大於 :hover 大於 :visited 大於 :link
+        問：以上四個優先級是否可以亂排？
+        答：:active 與 :hover 必須是第一優先級與第二優先級
+            因為當 :active 與 :hover 的優先級弱低於 :visited 或 :link 時，效果會被 :visited 或 :link 覆蓋
+            若 :active 的優先級小於 :hover 時，點擊時的效果會被配處時的效果覆蓋
+            所以 :active 的優先級又必須比 :hover 高
+        */
+
+    </style>
+</head>
+<body>
+    <a href="http://www.google.com" target="bland">Google</a>
+    <br>
+    <a href="http://www.Google44253.com" target="bland">Google44253</a>
+</body>
+</html>
