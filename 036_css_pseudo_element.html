@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Element 偽元素</title>
+    <style>
+        /* Pseudo Element 偽元素 */
+
+        /* What is Pseudo Elemtnt? */
+        /* For instance, we always see the article on the website, and the first character is bigger than all the others. */
+        /* How does CSS do that? */
+
+        /* Indeed, we can use span tags to do this. */
+        span{font-size:50px;}
+        /* But every time when we change the article, we need to reset the content in the span tag. It's very inconvenient. */
+        
+        /* Pseudo Element: 表示頁面中一些特殊並不真實存在的元素（特殊的位置...等，相較於偽類指的是特殊的狀態）
+            偽元素用 ::開頭
+            ::first-letter 表示第一個字母
+            ::first-line 表示第一行
+            ::selection 表示被鼠標選擇、反黑的目標
+            ::before 元素的開始
+            ::after 元素的最後
+                before after 需搭配 content 屬性使用
+                before after 的內容鼠標無法選取
+        */
+
+        p::first-letter{color: violet;}
+        /* p::first-letter 因為是指定 p 標籤，所以無論第一個字母是否被其他標籤所選擇，都會產生影響 */
+
+        p::first-line{background-color: lightgreen;}
+        /* p::first-line 無論網頁視窗怎麼改動，永遠都是第一行受影響 */
+
+        p::selection{background-color: lightblue;}
+
+        div::before{
+            content: '【 ';
+            color: red;
+        }
+
+        div::after{
+            content: ' 】';
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div>This is an div tag in html.</div>
+    <p>This is an apple.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nam, perspiciatis adipisci excepturi ad deleniti commodi blanditiis. Quod aperiam, aut repudiandae ab, vitae excepturi et harum consequatur inventore, quidem dolor.</p>
+    <p><span>L</span>orem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quibusdam corporis, modi tempore mollitia quidem. Sunt numquam distinctio hic eius animi, esse amet, molestias fugit quae quidem nesciunt delectus culpa.</p>
+
+</body>
+</html>
