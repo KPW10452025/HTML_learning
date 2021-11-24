@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 10rem;
+            height: 10rem;
+            /* 
+            顏色單位
+                顏色名稱：在css中可以使用顏色的英文名稱來設置各種顏色
+                    red, orange, green, blue...等
+                RGB值：Red Green Blue 三種顏色的配色
+                    每一種顏色的範圍 0~255（0 % ~ 100 %）
+                    語法：RGB(值, 值, 值)
+                RGBA值：Red Green Blue 三種顏色的配色，再加上 Alpha通道（透明度）
+                    Alpha 範圍 0 ~ 1
+                十六進制RGB值：
+                    語法：#紅色綠色藍色
+                    範圍：00 ~ ff
+                    特殊：特別情況下可以簡寫，當三個顏色得數值剛好都是重複時
+                        #ffffff 變成 #fff
+                        #228800 變成 #280
+                        #0000ff 變成 #00f
+            */
+            background-color: rgb(255, 0, 0)
+        }
+
+        .box2{
+            width:15rem;
+            height:15rem;
+            background-color: rgba(0, 0, 255, 0.1)
+        }
+
+        .box3{
+            width:20rem;
+            height:20rem;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
