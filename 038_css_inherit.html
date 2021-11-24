@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS_Inherit</title>
+    <style>
+        /*
+        樣式繼承：對一個選擇器做聲明時，也會影想到該元素的所有後代元素
+        繼承的設計是為了方便開發，可以把通用設定放到祖先元素中。
+
+        注意：不是所有的樣式都會被繼承，背景相關、佈局相關...等無法被繼承
+        */
+
+        /* 選擇器是 p 元素，但可以發現 p 元素下的 span 元素也產生效果 */
+        p{
+            color: red;
+        }
+
+        div{
+            color: green;
+            background-color: pink;
+        }
+        /* background-color 並不會繼承
+        但頁面顯示 div 底下的元素的背景顏色都改變是因為
+        一般情況下標籤的背景顏色都是默認透明
+        所以當祖先有設定背景顏色時，就會蓋過透明色 */
+
+    </style>
+
+</head>
+<body>
+    <p>This is a p tag. <!-- red -->
+        <span>This is a span tag in p tag.</span> <!-- red -->
+    </p>
+
+    <span>This is a span tag which is not in the p tag.</span> <!-- default color -->
+
+    <div>This is a div tag.
+        <p>This is a p tag in div tag.</p>
+        <span>This is a span tag in div tag.
+            <em>This is a em tag in span tag.</em>
+        </span>
+    </div>
+
+</body>
+</html>
