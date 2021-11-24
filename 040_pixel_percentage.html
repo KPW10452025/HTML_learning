@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+            長度單位：
+                像素（pixel）
+                    實際上是由一個一個小點構成的
+                    不同螢幕的像素大小是不同的
+                    所以同樣的 200px 在不同螢幕的效果不一樣
+                百分比
+                    可以將屬性值設定為相對於其父元素屬性的百分比
+                    寫百分比的好處是，若父元素更變了，子元素也會依照比例一起變更
+            */
+            width: 300px;
+            height: 200px;
+            background-color: orange
+        }
+
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
