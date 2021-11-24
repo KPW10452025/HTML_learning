@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+            長度單位：
+                像素（pixel）
+                    實際上是由一個一個小點構成的
+                    不同螢幕的像素大小是不同的
+                    所以同樣的 200px 在不同螢幕的效果不一樣
+                百分比
+                    可以將屬性值設定為相對於其父元素屬性的百分比
+                    寫百分比的好處是，若父元素更變了，子元素也會依照比例一起變更
+                em
+                    em 單位是相對長度單位。它是相對於該元素本身字體大小（font-size 屬性）的值
+                    若在一個沒有設定 font-size 的「元素」上，有其他屬性是以 em 做為長度單位，它則會繼承「父元素」的 font-size 屬性值，做為 em 單位的參考值
+                    針對第二點，若父元素也無設定 font-size 屬性值，則繼續往上繼承，直到根元素；若 CSS 中皆無設定，則依照瀏覽器預設值：通常是 16px
+                rem
+                    rem 單位是相對長度單位。每個元素透過「倍數」乘以根元素的 px 值。
+            */
+
+            /*
+            絕對長度單位：其表示的值為一固定值，反映了真實世界的物理尺寸。例如：cm、mm、*px等 。（px 較特殊，是 CSS 像素的絕對單位，但會因為裝置不同而有所差異）
+            相對長度單位：其表示的值是相對另一長度屬性值所計算出來的。例如：em、rem、vw、vh等
+            */
+
+            /* 參考資料 */
+            /* https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/css-%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%88%86%E4%BA%AB-em-%E5%96%AE%E4%BD%8D%E7%9A%84%E5%BC%B7%E5%A4%A7%E7%94%A8%E9%80%94-457dc30a83b4 */
+
+            width: 300px;
+            height: 200px;
+            background-color: orange
+        }
+
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: green;
+        }
+
+        .box3{
+            font-size: 30px;
+            width: 10em;
+            height: 10em;
+            background-color: blue;
+        }
+
+        html{
+            font-size: 5px;
+        }
+
+        .box4{
+            font-size: 20px; /* 因為 rem 是依據根元素做改變，所以這裡的 font-size 不會影響 rem */
+            width: 10rem;
+            height: 10rem;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <div class="box3"></div>
+
+    <div class="box4"></div>
+</body>
+</html>
