@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <style>
+        /* 
+        layout 佈局：css 最關鍵的難點
+            何謂佈局？
+                也就是網頁頁面的排版，哪邊放文字、哪邊放圖片、各個按鈕與超連結關係，直接影響用戶體驗
+        normal flow 文檔流、正常流、常規流：
+            網頁是一個多層的結構，一層疊著一層，通過 css 可以為每一層側置樣式
+            雖然整體架構為立體結構，但是用戶只能俯瞰這個結構，所以堆用戶而言，網頁只是一個經修飾後的平面
+            這些多層結構中，最底下的一層稱為：normal flow 文檔流
+            文檔流就是網頁結構最底下的基礎
+            我們創建的元素，默認都是在文檔流中進行排列
+            對於開發者來說，元素主要有兩個狀態
+                在文檔流中
+                不在文檔流中（脫離文檔流）
+            
+            元素在文檔流中的特點
+                塊元素
+                    塊元素會在頁面中獨佔一行
+                    默認寬度是父元素的寬度（會充滿父元素）
+                    默認高度是被取決於子元素
+                行內元素
+                    行內元素不會獨佔一行，只佔自身大小
+                    行內元素在頁面中，自主向右水平排列，如果一行中無法容納所有行內元素，則元素會自動換行後繼續自主樣右排列
+                    默認寬度、高度都是取決於子元素
+        */
+        .box1{
+            /* 默認寬度為父元素寬度，即 body 寬度，即螢幕寬度 */
+            /* 默認高度是被取決於子元素 */
+            background-color: blueviolet;
+        }
+
+        .box2{
+            width: 800px;
+            /* 默認高度是被取決於子元素 */
+            background-color: green;
+        }
+
+        span{
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">I am div1.</div>
+    <div class="box2">
+        <p>I am p1 which in the div.</p>
+        <p>I am p2 which in the div.</p>
+    </div>
+    <span>I am span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I am span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I am span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+    <span>I an span.</span>
+</body>
+</html>
