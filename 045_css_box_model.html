@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box model</title>
+    <style>
+        .box1{
+            /* 
+            內容區（content）：元素中所有子元素和文本能容都在內容區中排列
+                內容區的大小，由 width 與 height 決定
+            */
+            width: 200px; /* div 默認寬度為父元素 body，所以默認寬度是隨螢幕變化 */
+            height: 200px; /* 因為 div 底下沒有內容，所以默認高度為 0 */
+            background-color: #bfa;
+
+            /* 
+            邊匡（border）：區分盒子內部與外部
+                邊匡的大小會影響盒子整體的大小
+                設置邊匡，至少要設置三個樣式：
+                    邊匡寬度：border-width
+                    邊匡顏色：border-color
+                    邊匡樣式：border-style
+            */
+            border-width: 10px; /* 目前盒子寬(200+10*2)高(200+10*2) */
+            border-color: green;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        box model: 盒模型、塊模型
+            css 將頁面中的所有元素都設置為一個矩形元素（矩形盒子）
+            將元素設置為矩形後，對頁面抽象的佈局，就變成簡單的實體盒子的擺放問題
+            每一個盒子都由以下幾個部分組成：
+                內容區（content）
+                那邊距（padding）
+                邊匡（border）
+                外邊距（margin）
+    -->
+
+    <!-- div 的默認高度 -->
+    <div class="box1">This is an apple. This apple is very sweet and delicious. You can buy this apple in our market.</div>
+</body>
+</html>
