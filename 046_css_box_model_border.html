@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* content */
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+            /* border */
+            /* border-width: 10px; 默認值：通常是３像素 */
+            /* border-color: green; 默認值：黑色 */
+            border-style: solid; /* 默認值 none 沒有邊匡 */
+        }
+
+        .box2{
+            /* content */
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+
+            /* border */
+            border-width: 10px 20px 30px 40px; 
+            /* 
+            一個值：上下左右
+            兩個值：上下 左右
+            三個值：上 左右 下
+            四個值：上 右 下 左
+            */
+            /* 也可以用以下四種指令決定個邊邊匡寬度 */
+            /* border-top-width: 10px; */
+            /* border-right-width: 10px; */
+            /* border-bottom-width: 10px; */
+            /* border-left-width: 10px; */
+            border-color: green red gray blue;
+            /* 原理同上，一樣可以用 top right bottom left 分別定義 */
+            border-style: solid dotted dashed double;
+            /* 原理同上，一樣可以用 top right bottom left 分別定義 */
+            /*  
+            solid 實線
+            dotted 點狀虛線
+            dashed 虛線
+            double 雙線
+            none 無邊匡（默認值）
+            */
+        }
+
+        .box3{
+            /* content */
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+
+            /* border 簡寫屬性（最常用） */
+            border: 10px red solid /* 三者順序隨意 */
+        }
+
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+
+            border-top: 5px red solid
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <br>
+    <div class="box2"></div>
+    <br>
+    <div class="box3"></div>
+    <br>
+    <div class="box4"></div>
+</body>
+</html>
