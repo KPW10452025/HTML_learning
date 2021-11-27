@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            border: 10px lightgreen solid;
+            /*
+            margin 外邊距
+                外邊距不會影響盒子大小
+                外邊距會影響盒子在瀏覽器螢幕上的位置
+                外邊距一樣有四個方向：
+                    margin-top：正值會把盒子往下移動，負值會把盒子往上移動
+                    margin-right：默認情況下，無任何效果
+                    margin-bottom：正值會把旁邊的盒子往下推，負值會把其他盒子往上拉
+                    margin-left：正值會把盒子往右移動，負值會把盒子往左移動
+                外邊距可以是負值
+                外邊距簡易寫法：（寫法同 border padding）
+                    margin: top right bottom left
+                    margin: top left-right bottom
+                    margin: top-bottom left-right
+                    margin: top-right-bottom-left
+            */
+            margin-top: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color: cadetblue;
+            border: 10px lightblue solid;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: chocolate;
+            border: 10px red solid;
+            margin-top: -320px;
+            margin-left: 370px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
