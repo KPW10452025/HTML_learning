@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* content */
+            width: 500px;
+            height: 500px;
+            background-color: green;
+
+            /* border */
+            border: 10px black solid ;
+
+            /* padding 內邊距 */
+            /* 
+            內邊距：content 與 border 之間的距離，默認狀態下為零
+                四個內邊距：
+                    padding-top
+                    padding-right
+                    padding-bottom
+                    padding-left
+                內邊距得設置會影響 content 的大小
+                內邊距的背景顏色，默認為content 的背景顏色
+                盒子可見匡大小 = content + padding + border
+                注意：500*500 的盒子，只的是 content + padding + border = 500，而非 content = 500
+            */
+            padding-top: 100px; /* 會發現瀏覽器上顯示的 content 部分的 height 從 500px 變成 600px */
+            /* padding-right */
+            /* padding-bottom */
+            /* padding-left */
+        }
+
+        .box2{
+            /* content */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            /* border */
+            border: 10px black solid;
+
+            /* padding */
+            padding: 5px 10px 20px 40px;
+        }
+
+        .inner{
+            /* content */
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">這段文字會顯示在 content 裡面</div>
+    <br>
+    <div class="box2">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>
