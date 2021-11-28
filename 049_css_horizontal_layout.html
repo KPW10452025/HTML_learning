@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .outer1{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+            margin-left: 100px;
+            /* 
+            元素水平方向的佈局：
+                元素在其父元素中的水平位置由以下幾個屬性共同決定：
+                    margin-left (ml)
+                    border-left (bl)
+                    padding-left (pl)
+                    width (w)
+                    padding-right (pr)
+                    border-right (br)
+                    margin-right (mr)
+                
+                一個元素在其父元素中，水平佈局必須滿足以下等式：
+                    ml + bl + pl + w + pr + br + mr = 父元素的 width
+                
+                用 outer1 與 inner1 為說明例：
+                    outer1 的 width 是 800 且是 inner1 的父元素
+                    所以，inner1 必須滿足以下條件：
+                        ml + bl + pl + w  + pr + br + mr = 800
+                    但套用聲明時會發現根本不等於 800
+                        100 + 0  + 0  +200 + 0  + 0  + 0  = 300
+                    原因在於「 margin-right 」
+                    margin-right 是由系統自己變動的，系統會自動變更 mr 來讓等式成立
+                    所以正確的的值是：
+                        100 + 0  + 0  +200 + 0  + 0  +500 = 800
+                    也就是說，自捅自主將 mr 變成 500 以讓等式成立
+                
+                調整情況：
+                    如果七個值沒有 auto 的情況，則瀏覽器會自動調整 mr 使等式成立
+                
+                這七個值中有三個值可以設置為 auto：
+                    如果某個值為 auto，則系統會優先調整 auto 使等式成立
+                    width
+                    margin-right
+                    margin-left
+
+
+            */
+        }
+
+        .outer2{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner2{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+            margin-left: 50px;
+            margin-right: 100px;
+        /* 
+        雖然有設定 mr = 100
+        50 + 0 + 0 + 200 + 0 + 0 + 100 != 800
+        因為等是不成立，所以即使故意寫出 margin-right: 100px 但系統仍會強制將 mr = 450
+        50 + 0 + 0 + 200 + 0 + 0 + 450 = 800
+        */
+        }
+
+        .outer3{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner3{
+            width:auto;
+            height: 200px;
+            background-color: #bfa;
+        /* 
+        0 + 0 + 0 + auto + 0 + 0 + mr = 800
+        因為有 auto 所以系統會優先調整 auto 使等式成立
+        所以 width = auto = 800, mr = 0
+        */
+        }
+
+        .outer4{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner4{
+            width:auto;
+            height: 200px;
+            background-color: #bfa;
+            margin-right: 750px;
+        /* 
+        0 + 0 + 0 + auto + 0 + 0 + 750 = 800
+        所以 width = auto = 50
+        */
+        }
+
+        .outer5{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner5{
+            height: 200px;
+            background-color: #bfa;
+        /* 
+        0 + 0 + 0 + width + 0 + 0 + 0 = 800
+        width = 800
+        可以發現，即使沒也聲明 width 系統會默認 width = auto
+        */
+        }
+
+        .outer6{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner6{
+            height: 200px;
+            margin-left: 100px;
+            width: auto;
+            margin-right: auto;
+            background-color: #bfa;
+        /* 
+        當有兩個 auto 時，會以容量最大化為優先條件
+        100 + 0 + 0 + width + 0 + 0 + margin-right = 800
+        width is auto = 800
+        margin-right is auto = 0
+        */
+        }
+
+        .outer7{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner7{
+            height: 200px;
+            margin-left: auto;
+            width: auto;
+            margin-right: auto;
+            background-color: #bfa;
+        /* 
+        margin-left + 0 + 0 + width + 0 + 0 + margin-right = 800
+        因為 ml 與 mr 與 w 都是 auto
+        所以 ml = mr = 0, w = 800
+        */
+        }
+
+        .outer8{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner8{
+            height: 200px;
+            margin-left: auto;
+            width: 200px;
+            margin-right: auto;
+            background-color: #bfa;
+        /* 
+        如果 width 有值 但 ml 與 mr 為 auto 時
+        系統會自動將 width 置中
+        margin-left + 0 + 0 + 200 + 0 + 0 + margin-right = 800
+        margin-left = margin-right = 300
+
+        此效果經常使用：指定 width 為固定大小，設定 margin 為 上下 = 0，左右 = auto
+            width: 000px;
+            margin: 0 auto;
+        */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer1">
+        <div class="inner1">inner1</div>
+    </div>
+    <br>
+    <div class="outer2">
+        <div class="inner2">inner2</div>
+    </div>
+    <br>
+    <div class="outer3">
+        <div class="inner3">inner3</div>
+    </div>
+    <br>
+    <div class="outer4">
+        <div class="inner4">inner4</div>
+    </div>
+    <br>
+    <div class="outer5">
+        <div class="inner5">inner5</div>
+    </div>
+    <br>
+    <div class="outer6">
+        <div class="inner6">inner6</div>
+    </div>
+    <br>
+    <div class="outer7">
+        <div class="inner7">inner7</div>
+    </div>
+    <br>
+    <div class="outer8">
+        <div class="inner8">innrt8</div>
+    </div>
+</body>
+</html>
