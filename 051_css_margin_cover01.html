@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1, .box2, .box1a, .box2a, .box1b, .box2b{
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1{
+            background-color: green;
+            margin-bottom: 100px;
+            /* box1 的 margin-bottom 會將下方 box2 往下推 */
+        }
+
+        .box2{
+            background-color: #bfa;
+            margin-top: 100px;
+            /* box2 的 margin-top 並沒有將本身往下推？！ */
+        }
+
+        /* 
+        【 垂直外邊距重疊（折疊） 】
+            只有「相鄰」「垂直」的外邊距會發生重疊（折疊）現象
+            兄弟元素：
+                兄弟元素之間的相鄰垂直外邊距，取兩者的較大值（當兩者皆為正值）
+                特殊情況：
+                    一正一負，取兩者之和
+                    兩者皆負，取絕對值後較大者
+                兄弟元素之間的外邊距重疊，對開發是有利的，通常不太需要進行處理
+        */
+
+        .box1a{
+            background-color: red;
+            margin-bottom: -100px;
+        }
+        .box2a{
+            background-color: pink;
+            margin-top: 110px;
+        }
+        /* 兄弟元素：一正一負，取其和：10px */
+
+        .box1b{
+            background-color: blue;
+            margin-bottom: -50px;
+        }
+        .box2b{
+            background-color: lightblue;
+            margin-top: -140px;
+        }
+        /* 兄弟元素：兩負，取絕對值較大者：-140px */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <br>
+
+    <div class="box1a"></div>
+    <div class="box2a"></div>
+
+    <br>
+
+    <div class="box1b"></div>
+    <div class="box2b"></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .outer1{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .inner1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            /* 我想交靠在 outer1 左上角的 inner1 往左下角移動 */
+            margin-top: 100px;
+            /* inner1 的確往下移動 100px 但是問題來了 */
+            /* outer1 也往下移動 100px 也就是説 inner1 在 outer1 中的相對位置根本沒變 */
+        }
+
+        /* 
+        【 垂直外邊距重疊（折疊） 】
+            只有「相鄰」「垂直」的外邊距會發生重疊（折疊）現象
+            父子元素：
+                父子元素之間的相鄰垂直外邊距：
+                    上外邊距，子元素會傳遞給父元素
+                父子元素外邊距折疊會影響到頁面的佈局，所以必須要進行處理
+                    消極改法：
+                        修改父元素 padding 與父元素 height
+                        讓父子元素不相鄰：父元素添加 border-top
+                    積極方法：之後說明
+        */
+
+        /* 修改父元素 padding 與父元素 height 產生子元素在左下角的效果 */
+        .outer2{
+            width: 200px;
+            height: 100px;
+            padding-top: 100px;
+            background-color: green;
+        }
+        .inner2{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+
+        /* 
+        讓父子元素不相鄰：父元素添加 border-top
+            因為添加 border 後整體高度會變高，所以必須在父元素的 height 減去增加高度
+            border 的顏色必須與背景一至
+            子元素向下推的距離也必須注意
+        */
+        .outer3{
+            width: 200px;
+            height: 199px;
+            border-top: 1px green solid;
+            background-color: green;
+        }
+        .inner3{
+            width: 100px;
+            height: 100px;
+            margin-top: 99px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer1">
+        <div class="inner1"></div>
+    </div>
+
+    <br>
+
+    <div class="outer2">
+        <div class="inner2"></div>
+    </div>
+
+    <br>
+
+    <div class="outer3">
+        <div class="inner3"></div>
+    </div>
+</body>
+</html>
