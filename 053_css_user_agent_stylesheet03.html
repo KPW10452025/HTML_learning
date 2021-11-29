@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./053_css_user_agent_stylesheet/reset.css">
+    <!-- <link rel="stylesheet" href="./053_css_user_agent_stylesheet/normalize.css"> -->
+
+    <style>
+        /* 
+        默認樣式：
+            通常情況下，瀏覽器都會為元素設置一些默認樣式
+            默認樣式的存在，會稍微影響頁面佈局
+            所以通常情況下，邊寫瀏覽器程式時，會去除掉瀏覽器的默認樣式
+                不同瀏覽器的默認樣式不一樣
+                主要是去除 PC 端樣式，移動端的默認樣式比較少
+        
+        由於每開一個新文檔就要逐ㄧ刪除默認樣式，太過於麻煩
+        由於通常要去除的默認樣式是 margin padding
+        可以直接選擇器 *{} 做聲明
+        至於其他較為零散的默認樣式再逐一聲明刪除
+
+        再其次就是直接下載別人已經整理好的 css 默認樣式刪除文檔
+        用 link 導入即可
+        注意：link 標籤要放在 style 標籤的上方，這樣之後在 style 的聲明才能蓋過 link
+        目前主流就分為兩個 .css 默認刪除文檔
+            reset.css 刪除全部默認樣式
+            normalize.css 在保留預設HTML的樣式的情況下，針對不同瀏覽器與各版本之間不相容的Tag進行微調。
+        */
+
+        .box1{
+            width: 50px;
+            height: 50px;
+            border: 1px black solid;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <p>This is an apple.</p>
+    <p>There has an banana.</p>
+    <p>She went to party yesterday night.</p>
+    <ul>fruit
+        <li>apple</li>
+        <li>banana</li>
+        <li>cherry</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 
+        默認樣式：
+            通常情況下，瀏覽器都會為元素設置一些默認樣式
+            默認樣式的存在，會稍微影響頁面佈局
+            所以通常情況下，邊寫瀏覽器程式時，會去除掉瀏覽器的默認樣式
+                不同瀏覽器的默認樣式不一樣
+                主要是去除 PC 端樣式，移動端的默認樣式比較少
+        
+        由於每開一個新文檔就要逐ㄧ刪除默認樣式，太過於麻煩
+        由於通常要去除的默認樣式是 margin padding
+        可以直接選擇器 *{} 做聲明
+        至於其他較為零散的默認樣式再逐一聲明刪除
+        */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .box1{
+            width: 50px;
+            height: 50px;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>This is an apple.</p>
+    <p>There has an banana.</p>
+    <p>She went to party yesterday night.</p>
+    <ul>fruit
+        <li>apple</li>
+        <li>banana</li>
+        <li>cherry</li>
+    </ul>
+</body>
+</html>
