@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .s1{
+            background-color: yellow;
+            /* 
+            行內元素的和模型
+                行內元素不支持設置 width height
+                行內元素可以設置 padding。垂直方向 padding 不會影響頁面佈局
+                行內元素可以設置 border。垂直方向 border 不會影響頁面佈局
+                行內元素可以設置 margin。垂直方向 margin 不會影響頁面佈局
+                    margin 水平相鄰時，距離相加
+            */
+            width: 100px; /* 沒有效果 */
+            height: 100px; /* 沒有效果 */
+            padding: 20px;
+            border: 5px green solid;
+            margin: 20px;
+        }
+
+        #a01{
+            /* 
+            a 標籤是行內元素，所以無法設定 width height
+            但是我就是想設置寬高時怎麼辦？運用 display 屬性
+            display 可以宣告該標籤為何種元素
+                inline 宣告此標籤為行內元素
+                block 宣告此標籤為塊元素
+                inline-block 宣告此標籤為行內塊元素
+                    既可以像塊元素一樣設置 width height 但又像行內元素一樣不會獨佔一行
+                table 宣告此標籤為表格
+                    表格之後會說明
+                none 元素不在頁面中顯示
+                    經常用在需要滑鼠碰觸到才會激活顯示的選單，不觸碰時會變成 none 不顯示
+
+            補充 visibility 屬性
+            visibility 可以宣告此標籤是否顯示
+                visible（默認值）：元素在頁面中正常顯示
+                hidden：元素在頁面中隱藏，不顯示
+                    visibility: hidden 與 display: none 差異
+                        visibility: hidden 只是不顯示，但是物件的佔位等還會存在於頁面中
+                        display: none 直接將物件從頁面中拔除
+            */
+            display: block;
+            /* visibility: hidden; */
+            /* display: none; */
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        #a02{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <a id="a01" href="http://www.youtube.com" target="block">youtube</a>
+    <span class="s1">This is s1 in span.</span>
+    <span class="s1">This is s1 in span.</span>
+    <div class="box1"></div>
+    <a id="a02" href="http://www.youtube.com" target="block">youtube</a>
+    <span class="s1">This is s1 in span.</span>
+    <span class="s1">This is s1 in span.</span>
+    <div class="box1"></div>
+    <!-- 行內塊元素，水平並排不會有間隙 -->
+    <a id="a02" href="http://www.youtube.com" target="block">youtube</a><a id="a02" href="http://www.youtube.com" target="block">youtube</a>
+    <div class="box1"></div>
+    <!-- 行內塊元素，垂直並排會有間隙 -->
+    <a id="a02" href="http://www.youtube.com" target="block">youtube</a>
+    <a id="a02" href="http://www.youtube.com" target="block">youtube</a>
+</body>
+</html>
