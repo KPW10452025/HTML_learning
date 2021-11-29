@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .outer1{
+            background-color: #bfa;
+            /* 默認情況下父元素 height 會被子元素 height 撐開 */
+        }
+        .inner1{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .outer2{
+            background-color: #bfa;
+        }
+        .inner2{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            margin-bottom: 20px;
+        }
+
+        .box1{
+            width: 800px;
+            height: 200px;
+            background-color: #bfa;
+            /* 
+            子元素會在父元素中內容區排列，如果子元素大小超過父元素，則子元素會從父元素中「溢出」
+            非必要情況下，通常設計網頁會避免溢出現象發生。
+            使用 overflow 屬性，來設定父元素如何及裡溢出的子元素
+                visible（默認值）：子元素會從父元素溢出，直接外部顯示
+                hidden：溢出的內容將會被裁剪，不再顯示
+                scroll：生成滾動條，通過滾動條可以查看完整內容
+                auto：根據需要，自動生成水平或是垂直方向滾動條，若都不需要，則不生成
+            overflow-x：單獨處理水平問題
+            overflow-y：單獨處理垂直問題
+            */
+            overflow: auto;
+        }
+        .box2{
+            width: 200px;
+            height: 300px;
+            /* background-color: orange; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer1">
+        <div class="inner1">inner1</div>
+    </div>
+
+    <br>
+
+    <div class="outer2">
+        <div class="inner2">inner2</div>
+        <div class="inner2">inner2</div>
+    </div>
+
+    <br>
+
+    <div class="box1">
+        <div class="box2">The cryptocurrency-trading hamster Mr Goxx has died. The rodent, who shot to internet fame for his ability to often outperform human investors using a specially built trading cage, died on Tuesday. The furry financier's official Twitter account announced the hamster's death to his 18,000 followers on social media. "You proved to us, that the internet doesn't necessarily have to be a toxic wasteland," his owners told the BBC. "We are absolutely overwhelmed with the uncountable and touching condolences which we've received across all channels. What we personally learned from this project has little to do with crypto."</div>
+    </div>
+</body>
+</html>
