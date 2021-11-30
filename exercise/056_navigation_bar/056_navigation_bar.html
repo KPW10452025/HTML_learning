@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>navigation_bar</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .left-menu {
+            width: 200px;
+            height: auto;
+            background-color: whitesmoke;
+            padding: 10px 0px;
+        }
+
+        .iteams {
+            width: 200px;
+            height: 25px;
+            padding-left: 10px; /* 讓 a 元素裡面的文字向左 10px */
+            line-height: 25px; /* 讓 a 元素裡面的文字垂直置中：當父元素的 line-height = height 時，子元素的內容就會垂直置中 */
+        }
+        div:hover{
+            width: auto;
+            background-color: rgba(39, 2, 2, 0.1);
+        }
+
+        a {
+            text-decoration: none; /* 去除超連結底線 */
+            font-size: 14px; /* a 元素文字大小 */
+        }
+        a:link {color: gray;} /* 超連結顏色 */
+        a:visited {color: gray;} /* 已拜訪連結顏色 */
+        a:hover {color: red;} /* 滑鼠觸碰激活顏色 */
+        a:active {color: red;} /* 滑鼠點擊激活顏色 */
+        span{
+            font-size: 12px;
+            padding: 0px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 盒模型可以用 nav(div) div(div) ul(li) -->
+    <nav class="left-menu">
+        <div class="iteams">
+            <a href="#">家用電器</a>
+        </div>
+        <div class="iteams">
+            <a href="#">手機</a><span>/</span><a href="#">營運商</a><span>/</span><a href="#">數碼</a>
+        </div>
+        <div class="iteams">
+            <a href="#">電腦</a><span>/</span><a href="#">辦公</a>
+        </div>
+        <div class="iteams">
+            <a href="#">家居</a><span>/</span><a href="#">傢具</a><span>/</span><a href="#">裝潢</a><span>/</span><a href="#">廚具</a>
+        </div>
+        <div class="iteams">
+            <a href="#">男裝</a><span>/</span><a href="#">女裝</a><span>/</span><a href="#">童裝</a><span>/</span><a href="#">內衣</a>
+        </div>
+        <div class="iteams">
+            <a href="#">美妝</a><span>/</span><a href="#">清潔</a><span>/</span><a href="#">寵物</a>
+        </div>
+        <div class="iteams">
+            <a href="#">女鞋</a><span>/</span><a href="#">箱包</a><span>/</span><a href="#">鐘錶</a><span>/</span><a href="#">珠寶</a>
+        </div>
+        <div class="iteams">
+            <a href="#">男鞋</a><span>/</span><a href="#">運動</a><span>/</span><a href="#">戶外</a>
+        </div>
+        <div class="iteams">
+            <a href="#">產房</a><span>/</span><a href="#">汽車</a><span>/</span><a href="#">汽車用品</a>
+        </div>
+        <div class="iteams">
+            <a href="#">母嬰</a><span>/</span><a href="#">玩具樂器</a>
+        </div>
+        <div class="iteams">
+            <a href="#">食品</a><span>/</span><a href="#">酒類</a><span>/</span><a href="#">生鮮</a><span>/</span><a href="#">特產</a>
+        </div>
+        <div class="iteams">
+            <a href="#">藝術</a><span>/</span><a href="#">禮品鮮花</a><span>/</span><a href="#">農資綠植</a>
+        </div>
+        <div class="iteams">
+            <a href="#">醫藥保健</a><span>/</span><a href="#">健身情趣</a>
+        </div>
+        <div class="iteams">
+            <a href="#">圖書</a><span>/</span><a href="#">文藝</a><span>/</span><a href="#">電子書</a>
+        </div>
+        <div class="iteams">
+            <a href="#">機票</a><span>/</span><a href="#">酒店</a><span>/</span><a href="#">旅遊</a><span>/</span><a href="#">生活</a>
+        </div>
+        <div class="iteams">
+            <a href="#">理財</a><span>/</span><a href="#">眾籌</a><span>/</span><a href="#">白條</a><span>/</span><a href="#">保險</a>
+        </div>
+        <div class="iteams">
+            <a href="#">安裝</a><span>/</span><a href="#">維修</a><span>/</span><a href="#">清洗</a><span>/</span><a href="#">二手</a>
+        </div>
+        <div class="iteams">
+            <a href="#">工業品</a>
+        </div>
+    </nav>
+</body>
+
+</html>
