@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            padding: 10px;
+            border: 10px green solid;
+
+            /* 
+            默認情況下，盒子的可見尺寸大小是：content+padding+border
+                在 .box1 就是 10+10+100+10+10=140
+
+                box-sizing 用來設置盒子尺寸的計算方式（設定 width 與 height 的作用）
+                    可選值：
+                        content-box：
+                            默認值，用 width 與 height 來決定 content 大小
+                            padding 與 border 是向「外」擴張
+                            padding 與 border 不會影響 content 大小
+                            padding 與 border 會影響盒子整體大小
+                        border-box：
+                            用 width 與 height 來決定盒子整體大小
+                            padding 與 border 是向「內」擴張
+                            padding 與 border 會影響 content 大小
+                            padding 與 border 不會影響盒子整體大小
+            */
+            box-sizing: content-box;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            padding: 10px;
+            border: 10px green solid;
+
+            /* 
+            border-box 的好處在於，當使用 width 與 height 來決定盒子整體大小後
+            無論怎麼修改 padding 與 border 都不會影響盒子整體大小
+            */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <br>
+    <div class="box2">box2</div>
+</body>
+</html>
