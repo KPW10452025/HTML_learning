@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>outline</title>
+    <!-- <link rel="stylesheet" href="./053_css_user_agent_stylesheet/reset.css"> -->
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border: 10px red solid;
+            /* 
+            使用 border 會推開周圍的元素，會影響頁面整體佈局
+            content 會因為 border 移動
+            */
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            outline: 10px green solid;
+            /* 
+            outline 輪廓
+            使用 outline 不會推開周圍的元素，不會影響頁面整體佈局
+            content 不會因為 outline 移動，outline 是以 content 為中心向外延伸的「輪廓」
+            outline 會蓋住他元素
+            */
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        /* 輪廓通常用在滑鼠接觸並激活某區域 */
+        .box3:hover {
+            outline: 10px green solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <span>This is a html file.</span>
+    <br>
+    <br>
+    <br>
+    <div class="box2"></div>
+    <span>This is a html file.</span>
+    <br>
+    <br>
+    <br>
+    <div class="box3"></div>
+</body>
+</html>
