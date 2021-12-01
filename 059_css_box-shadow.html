@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-shadow</title>
+    <style>
+        /* 當滑鼠數碰到 .box 時會產生陰影效果 */
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+        .box1:hover {
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 
+        說明：
+            box-shadow 設定陰影效果
+            box-shadow: 向左偏移量 向下偏移量 模糊半徑 陰影顏色
+        */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <span>Please touch the box.</span>
+</body>
+</html>
