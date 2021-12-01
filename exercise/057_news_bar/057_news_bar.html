@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>news_bar</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        body{
+            /* background-color: black; */
+        }
+
+        .news_wrapper{
+            width: 300px;
+            height: 499px;
+            /* background-color: whitesmoke; */
+
+            border-top: 1px #ddd solid;
+
+            /* 將物件置中用 */
+            margin: 50px auto;
+        }
+
+        .news_title{
+            height: 41px;
+
+            /* 將文字垂直置中 */
+            line-height: 41px;
+
+            /* 將 h2 轉換為行內塊元素，好處是寬度會隨著內容改變 */
+            display: inline-block;
+
+            /* 設計一條會隨著標題寬度一起變化的紅線 */
+            border-top: 1px red solid;
+
+            /* 將整個新聞標題容器上移，使紅線能和灰線重合 */
+            margin-top: -1px;
+        }
+
+        .focus_news{
+            height: 150px;
+        }
+        
+        a{
+            text-decoration: none; /* 去除超連結底線 */
+        }
+
+        .news_title a{
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .news_title a:hover{color: red;}
+
+        .focus_news_title{
+            color: #fff;
+            font-weight: bold;
+            margin-top: -25px;
+            padding-left: 25px;
+        }
+
+        .news_list li{
+            width: 285px;
+            height: 30px;
+            /* padding-left: 15px; */
+            line-height: 30px;
+        }
+
+        .news_list li a{
+            font-size: 13px;
+            color: black;
+        }
+
+        .news_list li a:hover{color: red;}
+
+        .news_list li::before{
+            content: "▪";
+            color: lightgrey;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 新聞列表外層容器 -->
+    <div class="news_wrapper">
+        <!-- 新聞標題 -->
+        <h2 class="news_title">
+            <a class="news_type" href="https://sports.163.com/" target="block">體育</a>
+        </h2>
+        <!-- 焦點新聞容器 -->
+        <div class="focus_news">
+            <a class="focus_news" href="https://www.163.com/sports/article/GQ4PRAH200058781.html" target="block">
+                <!-- 焦點新聞圖片 -->
+                <img src="./img/霸氣！埃菲爾鐵塔前7隻腳踏金球.webp" alt="霸氣！埃菲爾鐵塔前7隻腳踏金球">
+                <!-- 焦點新聞標題 -->
+                <h3 class="focus_news_title">霸氣！埃菲爾鐵塔前7隻腳踏金球</h3>
+            </a>
+        </div>
+
+        <!-- 新聞列表 -->
+        <ul class="news_list">
+            <li>
+                <a class="news_in_list" href="https://www.163.com/sports/article/GQ47DNJ10005877U.html" target="block">艾弗森式悲劇重演？</a>
+            </li>
+            <li>
+                <a class="news_in_list"  href="https://www.163.com/sports/article/GQ2P02SN00058781.html" target="block">罵罵罵咧咧地該滾出國家隊的名嘴，罵了</a>
+            </li>
+            <li>
+                <a class="news_in_list"  href="https://www.163.com/sports/article/GQ1JC5M700058781.html" target="block">金球獎最意外逆襲!34歲的他第一次殺進前四</a>
+            </li>
+            <li>
+                <a class="news_in_list"  href="https://www.163.com/sports/article/GQ1PFUUL00059A81.html" target="block">以史為鑑：西蒙斯和歐文，還可以嗎？</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
