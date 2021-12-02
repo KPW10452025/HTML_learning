@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float and inline element</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 
+        行內元素變成浮動元素：
+            行內元素脫離文檔流會變成塊元素，特點與脫離文檔流的塊元素一樣
+        
+        總結：
+            脫離文檔留後，就不必區分行內元素及塊元素
+        */
+
+        .s1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        .s2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+        }
+        .s3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* float: right; */
+        }
+        .s4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            float: right;
+        }
+        .s5 {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <span class="s1">This is span1.left</span>
+    <span class="s3">This is span1.5.none</span>
+    <span class="s2">This is span2.left</span>
+    <span class="s3">This is span3.none</span>
+    <span class="s3">This is span3.none</span>
+    <span class="s4">This is span4.right</span>
+    <span class="s5">This is span5.right</span>
+</body>
+</html>

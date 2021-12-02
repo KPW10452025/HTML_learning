@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float and block element</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            background-color: green;
+            float: left;
+        }
+        .box2 {
+            background-color: blueviolet;
+        }
+        .box3 {
+            background-color: red;
+        }
+        /*
+        經觀察發現：
+            box2 因為沒有設定 width 所以繼承自父元素
+            box1 因為是 float: left 所以脫離文檔流。所以在沒設定 width 和 height 的情況下，width 和 height 由 content 決定
+            雖然 box1 蓋住部分的 box2，但是 box2 的文字仍會自動繞開
+
+            當塊元素（會獨佔一行）變成浮動後脫離文檔流，就不會佔據一行
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">This is box1.</div>
+    <div class="box2">This is box2.</div>
+    <div class="box3">This is box3.</div>
+</body>
+</html>
