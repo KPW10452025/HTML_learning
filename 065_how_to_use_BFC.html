@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC演示</title>
+    <style>
+        /* 
+        說明：
+            一、因為 box2 開啟 BFC 所以沒有被 box1 蓋住
+            二、因為 box1 開啟 BFC 所以外邊距沒有與 box3 重疊，故 box3 可以使用 margin-top 向下移動
+        */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            float: left;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            overflow: hidden;
+        }        
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <br>
+    <div class="box1">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>
