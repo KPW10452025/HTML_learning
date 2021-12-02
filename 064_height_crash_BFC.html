@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高度塌陷與BFC</title>
+    <style>
+        .outer {
+            border: 10px gray solid;
+        }
+        .inner {
+            height: 100px;
+            background-color: #bfa;
+        }
+        /* outer 沒有設定寬高，好處在於 outer 大小是隨著 inner 的量做變化 */
+        /* 不會因為 outer 固定大小 inner 內容太少而導致 outer 整面空白 */
+        /* 也不會因為 inner 內容太多導致 overflow */
+        .inner_float {
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+        /*
+        高度塌陷問題：
+            在浮動佈局中，若父元素沒有指定高度，其高度默認是被子元素所稱開的
+            當子元素浮動後，子元素完全脫離文檔流，將會無法撐起復元素的高度，導致父元素高度丟失而塌陷
+            經觀察發現，此塌陷還會影響到後面的塊元素
+
+        問題：既想滿足父元素可以隨著子元素多寡做變化，但又不想發生塌陷問題，如何解決？
+
+        BFC（Block Formatting Context）塊級格式化環境：
+            BFC 是 css 中的一個隱藏屬性，當元素開啟 BFC 時，該元素會變成一個獨立的佈局區域
+            特點：
+                一、開啟 BFC 的元素，不會被浮動元素覆蓋
+                二、開啟 BFC 的元素，不會產生父元素與子元素外邊距重疊問題
+                三、開啟 BFC 的元素，可以包含浮動的子元素
+
+        因為 BFC 是隱藏屬性，是藉由開啟某些屬性時附加的效果，並無直接開啟的方法，所以想要開啟 BFC 一定會有副作用
+            一、將元素轉為浮動元素 float（不推薦）
+            二、將元素轉為行內塊元素 display:inline-block（不推薦）
+            三、將元素的 overflow 設定為 visible 以外的值：
+                overflow: hidden（推薦）
+                overflow: auto（推薦）
+        */
+        .outer_BFC {
+            border: 10px gray solid;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">inner1</div>
+        <div class="inner">inner2</div>
+        <div class="inner">inner3</div>
+        <div class="inner">inner4</div>
+    </div>
+    <br>
+    <div class="outer">div_top
+        <div class="inner_float">inner1_float</div>
+        <div class="inner_float">inner2_float</div>
+        <div class="inner_float">inner3_float</div>
+    </div>
+    <div style="width: auto; height: 200px; background-color: green;">div_bottom</div>
+    <br>
+    <div class="outer_BFC">div_top_BFC
+        <div class="inner_float">inner1_float</div>
+        <div class="inner_float">inner2_float</div>
+        <div class="inner_float">inner3_float</div>
+    </div>
+    <div style="width: auto; height: 200px; background-color: green;">div_bottom</div>
+</body>
+</html>
