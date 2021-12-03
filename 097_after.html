@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用偽類屬性after和clear解決高度塌陷問題</title>
+    <style>
+        /* 
+        高度塌陷解決辦法：
+            方法一：運用 overflow: hidden;
+                缺點：雖然是副作用很小的方法，但在 box1 仍會產生 overflow: hidden; 的效果
+            方法二：在 html 中放入一個沒有實際寬高的 box 後使用 clear: both;
+                相較於方法一：此方法 box1 就完全無副作用
+                缺點：會在 html 文檔中產生無意義的結構
+            方法三：運用 .box1::after
+                原理：
+                    由方法二得知，只要在浮動元素最後面安插一個具有 clear 屬性的元素就能解決高度塌陷問題
+                    運用偽類屬性 ::after 就能在 css 文檔中產生一個不存在的元素
+                    .box1::after 在 css 文檔中產生一個不存在的元素，安插在 box1 裡面的最後面
+                    元素內容無 content: ""
+                    因為偽類屬性 ::after 是一個行內元素，所以需要轉換成塊元素 display: block;
+                    最後放入最重要的 clear 屬性
+                優點：
+                    一、box1 毫無副作用
+                    二、html 文檔無結構上的變化
+
+        */
+        .box1{
+            border: 10px black solid;
+            /* overflow: hidden; */
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+        }
+        /* .box3{
+            clear: both;
+        } */
+        .box1::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3"></div> -->
+    </div>
+</body>
+</html>
