@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>屬性 clear</title>
+    <style>
+        /* 
+        開啟 BFC 都會有副作用，即使是使用副作用最小的 overflow: hidden 也是會有
+        那有沒有辦法說開啟 BFC 而且無副作用？
+        */
+        div {
+            font-size: 50px;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            float: left;
+        }
+        .box2 {
+            width: 250px;
+            height: 250px;
+            background-color: orange;
+            /* 
+            由於 box1 的浮動，導致 box2 位置上移
+            也就是說 box2 受到了 box1 影響，位置發生了改變
+
+            如果不希望某個元素，因為其他元素的浮動而改變位置
+            可以通過 clear 屬性來清除浮動元素對當前元素所產生的影響
+
+            clear
+                作用：清除浮動元素對當前元素所產生影響
+                可選值：
+                    left 清除左側元素對當前元素的影響
+                    right 清除右側元素對當前元素的影響
+                    both 清除兩側中最大影響的那個元素
+
+                原理：設置清除浮動以後，瀏覽器會自動為元素添加一個上外邊距，使其位置不受其他元素影響
+            */
+        }
+        .box3 {
+            width: 250px;
+            height: 250px;
+            background-color: green;
+            clear: left;
+        }
+        .box4 {
+            width: 250px;
+            height: 250px;
+            background-color: blue;
+            float: right;
+        }
+        .box5 {
+            width: 250px;
+            height: 250px;
+            background-color: brown;
+            clear: right;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- .box1+.box2+.box3 -->
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <br>
+    <div class="box1">1</div>
+    <div class="box3">3</div>
+    <br>
+    <div class="box4">4</div>
+    <div class="box2">2</div>
+    <br>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+</body>
+</html>
