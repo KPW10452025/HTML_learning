@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clearfix</title>
+    <style>
+        /* box1 & box2 因為外邊距離發生垂直方向折疊 */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+        /* 嘗試運用偽類屬性 ::before 使 box3 & box4 外邊距隔離 */
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .box3::before{
+            /*
+            content: "";
+            安插偽類元素無效，失敗
+            */
+
+            /*
+            content: "";
+            display: block;
+            轉為塊元素，仍然失敗
+            */
+
+            /*
+            content: "";
+            display: inline-block;
+            雖然成功分開外邊距，但是還是不夠完美
+            */
+
+            /* 運用 display: table 可以消除外邊距重疊問題 */
+            /* table 與 block 差異？ block 只能解決塌陷問題，table 既可以解決塌陷問題也可以解決外邊距問題 */
+            content: "";
+            display: table;
+        }
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <br>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

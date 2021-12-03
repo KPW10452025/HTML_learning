@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clearfix</title>
+    <style>
+
+        /* box1 & box2 外邊距離發生垂直方向折疊 */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+        /* box3 高度塌陷 */
+        .box3 {
+            border: 10px green solid;
+        }
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            float: left;
+        }
+
+        /* clearfix 這個樣式可以同時解決高度塌陷與外邊距重疊問題，所以當遇到這類問題時，直接使用 clearfix 類即可 */
+        /* 使用方法：在 html 標籤裡面添加 clearfix */
+        .clearfix::before,   /* 解決外邊距問題 */
+        .clearfix::after{                       /* 解決塌陷問題 */
+            content: '';     /* 解決外邊距問題 */
+            display: table;  /* 解決外邊距問題 */
+            clear: both;                        /* 解決塌陷問題 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+    <br>
+    <div class="box3 clearfix">
+        <div class="box4"></div>
+    </div>
+
+</body>
+</html>
