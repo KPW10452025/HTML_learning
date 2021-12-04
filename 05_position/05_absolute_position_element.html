@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>絕對定位元素的位置</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            position: relative;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            /* 
+        水平佈局
+            包含塊的內容區寬度 = 
+            left + margin-left + border-left + padding-left + weight + padding-right + border-right + margin-right + right
+
+            – 當我們開啟了絕對定位後：
+                水平方向的佈局等式就需要添加 left 與 right 兩個值
+                    此時規則和之前一樣只是多添加了兩個值
+                        當發生過度約束
+                            如果九個值中沒有 auto 則自動調整 right 值以使等式滿足
+                            如果有 auto 則系統會自動調整 auto 的值已使等式滿足
+                    
+                    — 可以設置 auto 的值有哪些？
+                        margin, width, left, rifht
+
+                    – 因為 left 與 right 默認值為 auto 所以如果不知道 left 與 right
+                        則等式不滿足時，會自動調整這兩個值
+
+                垂直方向佈局等式也必須滿足
+                    top + margin-top/bottom + padding-top/bottom + border-top/bottom + height = 包含塊的內容區高度
+
+        */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .box3 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            position: relative;
+        }
+
+        .box4 {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .box5 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            position: relative;
+        }
+
+        .box6 {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            position: absolute;
+            margin-top: auto;
+            margin-bottom: auto;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <br>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+    <br>
+    <div class="box5">
+        <div class="box6"></div>
+    </div>
+</body>
+
+</html>
