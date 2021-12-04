@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>position sticky</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        /* 目標：頁面向下滑動時，當導航條碰到頁面頂部時，會沾黏在頁面頂部，不會隨著頁面一直往下滑動而消失 */
+
+        /* 設定頁面高度 */
+        body {
+            height: 3000px;
+        }
+
+        /* 設置 nav 樣式 */
+        .nav {
+            /* 寬高 */
+            width: 1210px;
+            height: 48px;
+            /* 顏色 */
+            background-color: #E8E7E3;
+            /* 置中（觀察用） */
+            margin: 100px auto;
+
+            /* 
+            粘滯定位（因為黏滯定位是新方法，所以兼容性頗差）
+                — 當元素的 position 屬性設置為 sticky 則開啟元素的黏滯定位
+                — 粘滯定位可以將元素在到達某一點時，使其固定在視窗
+            */
+            position: sticky;
+            top: 20px;
+        }
+
+        /* 設置 li 樣式 */
+        .nav li {
+            /* 使 li 浮動後橫向左排列 */
+            float: left;
+            /* 高度：因為有設定 line-height 所以可以省略 */
+            /* height: 100%; */
+            /* 讓文字垂直居中 */
+            line-height: 48px;
+        }
+
+        /* 設定 a 樣式 */
+        .nav li a {
+            /* 去除文字底線 */
+            text-decoration: none;
+            /* 文字顏色 */
+            color: #777778;
+            /* 文字大小 */
+            font-size: 18px;
+            /* 因為 a 是行內元素，無法設定 height，所以先將之轉換為塊元素 */
+            display: block;
+            /* 因為 display: block 將 a 從行內元素轉為塊元素，所以可以設定高度 */
+            height: 48px;
+            /* 文字水平置中 */
+            text-align: center;
+        }
+
+        .nav li a:hover {
+            background-color: #3F3F3F;
+            color: white
+        }
+
+        /* 設定寬度 */
+        #d1 {
+            width: 166px;
+        }
+
+        #d2 {
+            width: 191px;
+        }
+
+        #d3 {
+            width: 175px;
+        }
+
+        #d4 {
+            width: 198px;
+        }
+
+        #d5 {
+            width: 113px;
+        }
+
+        #d6 {
+            width: 197px;
+        }
+
+        #d7 {
+            width: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a id="d1" href="#">HTML/CSS</a>
+        </li>
+        <li>
+            <a id="d2" href="#">Browser Side</a>
+        </li>
+        <li>
+            <a id="d3" href="#">Server Side</a>
+        </li>
+        <li>
+            <a id="d4" href="#">Programming</a>
+        </li>
+        <li>
+            <a id="d5" href="#">XML</a>
+        </li>
+        <li>
+            <a id="d6" href="#">Web Building</a>
+        </li>
+        <li>
+            <a id="d7" href="#">Reference</a>
+        </li>
+    </ul>
+</body>
+
+</html>
