@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What is Position?</title>
+    <style>
+
+        /* 目標：box3 位置不變，移動 box2 到 box1 右邊 */
+
+        body {
+            font-size: 60px;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+            /*
+            定位 position 
+                定位是一種更高級的佈局手段
+                通過定位可以將元素擺放到頁面的任意位置
+                使用 position 屬性來設置「定位」
+                    可選值：
+                        static 默認值，元素是靜定的，「無開啟定位」
+                        relative 開啟元素的「相對定位」
+                        absolute 開啟元素的「絕對定位」
+                        fixed 開啟元素的「固定定位」
+                        sticky 開啟元素的「黏滯定位」
+                    
+                    相對定位：
+                        當元素的 position 屬性值設置為 relative 時開啟了元素的相對定位
+                        相對定位的特點：
+                            一、元素開啟相對定位後，若無設置偏移量，元素不會發生位移變化
+                            二、相對定位是參照元素在文檔流中的位置進行定位（定位位置：即為元素未開啟定位時的位置）
+                            三、相對定位會提升元素的層級（會蓋住沒開啟定位的元素）
+                            四、相對定位不會使元素脫離文檔流
+                            五、相對定位不會改變元素性質，塊還是塊、行內還是行內
+                                ※ 如何確認元素是塊還是行內？是否可以設定寬高、是否獨佔一行。
+                            
+                    偏移量（offset）:
+                        當元素開啟定位（屬性 position 設定為非 static ），可以通過偏移量設置元素位置
+                        top
+                            定位元素離定位位置上邊的的距離
+                                正：元素向下
+                                負：元素向上
+                        bottom
+                            定位元素離定位位置下邊的的距離
+                                正：元素向上
+                                負：元素向下
+                        left
+                            定位元素離定位位置左邊的的距離
+                                正：元素向右
+                                負：元素向左
+                        right
+                            定位元素離定位位置右邊的的距離
+                                正：元素向左
+                                負：元素向右
+
+                        通常垂直方向位移會從 top bottom 中二選一設定
+                        通常水平方向位移會從 left right 中二選一設定
+            */
+
+            position: relative;
+            bottom: 200px;
+            left: 200px;
+
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+
+</body>
+</html>

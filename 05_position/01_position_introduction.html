@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What is Position?</title>
+    <style>
+
+        /* 目標：box3 位置不變，移動 box2 到 box1 右邊 */
+        /* 基礎方法：使用 margin 移動，但缺點是移動一個元素，其他元素也會受影響 */
+
+        body {
+            font-size: 60px;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+            margin-left: 200px;
+            margin-top: -200px;
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+
+            margin-top: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+
+</body>
+</html>
