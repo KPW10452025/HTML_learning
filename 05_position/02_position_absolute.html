@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>元素定位之絕對定位</title>
+    <style>
+        /* 目標：box3 位置不變，移動 box2 到 box1 右邊 */
+
+        body {
+            font-size: 60px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+            /* 
+            絕對定位：
+                — 當元素的 position 屬性設置為 absolute 則開啟元素的絕對定位
+                — 絕對定位特點：
+                    一、元素開啟絕對定位後，若無設置偏移量，元素位置不會發生變化
+                    註：元素開啟相對定位後，若無設置偏移量，元素不會發生變化
+                    二、元素開啟絕對定位後，元素會從文檔流中脫離
+                    三、絕對定位會改變元素性質：行內元素變成塊元素、塊元素不再獨佔一行...等
+                    四、絕對定位會使元素提升一個層級
+                    五、絕對定位元素是相對於其包含塊進行定位的
+                    
+                    包含塊（containing block）：
+                        — 正常情況下，元素的包含塊：
+                            包含塊就是離當前元素最近的祖先塊元素
+                        
+                        — 開啟絕對定位的情況下，元素的包含塊：
+                            包含塊就是離他最近的開啟了定位的祖先元素
+                                如果所有的祖先元素都沒有開啟定位，則根元素就是包含塊
+                        
+                        — html（根元素、初始包含塊）
+
+            */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .box4 {
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+            /* position: relative; */
+        }
+
+        .box5 {
+            width: 300px;
+            height: 300px;
+            background-color: violet;
+            /* position: relative; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1">1</div>
+    <div class="box4">4
+        <div class="box5">5
+            <div class="box2">2</div>
+        </div>
+    </div>
+    <div class="box3">3</div>
+
+</body>
+
+</html>
