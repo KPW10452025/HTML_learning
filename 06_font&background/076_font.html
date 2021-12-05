@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font 字體族</title>
+    <style>
+        /* 
+        @font-face 可以將服務器中的字體直接提供給用戶去使用
+            使用 @font-face 會有幾個問題：
+                一、用戶加載速度
+                二、字體版權問題
+                三、字體格式（某些瀏覽器不支持特殊格式）
+        */
+        @font-face {
+            /* 指定字體的名字 */
+            font-family: 'qing_song_shou_xie';
+            /* 服務器中字體路徑 */
+            src: url('./font/清松手寫體1.ttf') format("truetype");
+            /* 
+            format() 告瀏覽器目前使用的字體的格式
+            因為現在的瀏覽器基本都能夠自主識別字體格式，所以可以不寫，保險起見也可以加上
+            truetype 的副檔名就是 .ttf
+            常見字體格式：
+                woff
+                woff2
+                truetype
+                opentype
+                embedded-opentype
+                svg
+            */
+        }
+
+        p {
+            /*
+            字體相關樣式
+                color 字體顏色
+                font-size 字體大小
+                    單位：
+                        em 相當於當前元素的一個 font-size
+                        rem 相當於根元素的一個 font-size
+                font-family 字體族（字體的格式）
+                    serif 襯線字型族
+                    sans-serif 非襯線字型族
+                    monospace 等寬字型，即字型中每個字寬度相同
+                    cursive 草書字型
+                    fantasy 主要是那些具有特殊藝術效果的字型
+
+                    可以同時使用多個字體，多個字體間使用英文逗號隔開
+                    第一個字體優先使用，第二個次之，依此類推
+            */
+            color: green;
+            font-size: 30px;
+            /* font-family:'Courier New', Courier, monospace; */
+            font-family: qing_song_shou_xie;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        編碼救地球 by geek
+    </p>
+    <p>
+        I love programming.
+    </p>
+    <p>
+        Algorithm is important
+    </p>
+</body>
+</html>
