@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <style>
+        li {
+            list-style: none;
+        }
+        li::before {
+            /* 
+            通過偽元素來設置圖標字體
+                1.找到要設置圖標的元素，通過 before 與 after 選中
+                2.在 content 中設置字體編碼（去文檔中查詢）
+                3.設置字體樣式
+                    fab
+                    font-family: 'Font Awesome 5 Brands';
+
+                    fas
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+            */
+            content: '\f06a';
+            font-family: 'Font Awesome 5 Brands', 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: green;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul class="list">
+            <li>Home</li>
+            <li>Profile</li>
+            <li>Message</li>
+            <li>Photos</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+    <!-- 也可以用實體的方式加入圖標 -->
+    <!-- 將 class="fas或是fab" 實體內容為 &#x實體編碼 -->
+    <span class="fas">&#xf06a</span>
+</body>
+</html>
