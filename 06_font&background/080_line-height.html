@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行高</title>
+    <style>
+        div {
+            font-size: 60px;
+            /* 
+            行高 line height
+                — 行高指的是文字佔有的實際高度
+                – 可以通過 line-height 來設置行高
+                    行高可以直接指定一個大小 px em
+                    也可以直接為行高設置一個整數
+                        如果是一個整數的話，行高將會是字體指定的倍數
+                — 行高會在字體匡上下平均分配
+                    所以可以將行高 line-height 設置為和高度一樣的值，使單行文字在一個元素中垂直居中
+                — 行高經常還用來設置文字的行間距
+                    行間距 = 行高 - 字體大小
+            
+            字體匡
+                — 字體匡就是字體存在的格子，設置 font-size 實際上就是在設置字體匡的高度
+            */
+            border: 1px red solid;
+            line-height: 1; /* 因為現在的 font-size: 60px 所以 line-height = 1 * 60 = 60px */ 
+        }
+    </style>
+</head>
+<body>
+    <div>編碼救地球 I love programming.</div>
+</body>
+</html>
