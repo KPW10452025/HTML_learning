@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel 輪播圖</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        /* 設置圖片的容器 */
+        .img-list {
+            width: 710px;
+            height: 380px;
+            margin: 100px auto;
+
+            /* 給 ul.img-list 開啟相對定位，是為了 div.pointer 的 bottom 與 left 值能在 ul.img-list 裡面生效 */
+            /* 目的是使 ul 的 pointer 可以相對於 ul 定位，而不是相對於初始包含塊（html）做定位 */
+            position: relative;
+        }
+
+        /* 設置 li */
+        .img-list li {
+            position: absolute;
+        }
+        
+        /* 設置圖片大小 */
+        img {
+            width: 710px;
+            height: 380px;
+        }
+
+        /* 通過秋改元素的層級來顯示指定的圖片 */
+        .img-list li:nth-child(4) {
+            z-index: 1;
+        }
+
+        /* 設置導航點的樣式 */
+        .pointer {
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .pointer a {
+            /* 設置行內元素向左浮動 */
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 8px;
+            background-color: rgba(255, 255, 255, .3);
+        }
+
+        /* .pointer a.active {
+            background-color: #fff;
+            outline: 3px solid rgba(255, 255, 255, 0.4);
+        } */
+
+        .pointer a:focus {
+            background-color: #fff;
+            outline: 3px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./img/1.jpg" alt="1"></a></li>
+        <li><a href="javascript:;"><img src="./img/2.jpg" alt="2"></a></li>
+        <li><a href="javascript:;"><img src="./img/3.jpg" alt="3"></a></li>
+        <li><a href="javascript:;"><img src="./img/4.jpg" alt="4"></a></li>
+        <li><a href="javascript:;"><img src="./img/5.jpg" alt="5"></a></li>
+        <li><a href="javascript:;"><img src="./img/6.jpg" alt="6"></a></li>
+        <li><a href="javascript:;"><img src="./img/7.jpg" alt="7"></a></li>
+        <li><a href="javascript:;"><img src="./img/8.jpg" alt="8"></a></li>
+        <div class="pointer">
+            <a class="active" href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+
+</body>
+
+</html>
