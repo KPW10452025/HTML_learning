@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div.box1 {
+            width: 500px;
+            border: 1px red solid;
+            /* 
+            text-align 文本的水平對齊
+                left 靠左對齊
+                right 靠右對齊
+                center 靠中對齊
+                justify 左右對齊
+            */
+            text-align: justify;
+        }
+        div.box2 {
+            border: 1px green solid;
+            font-size: 40px;
+        }
+        .s1 {
+            font-size: 20px;
+            border: 1px orange solid;
+            /* 
+            vertical-align 設置元素垂直對齊
+                — baseline 默認值，基線對齊
+                — top 頂部對齊
+                — bottom 底部對齊
+                — middle （偽）居中對齊，基線高+英文x的一半高度
+                — 直接輸入像素值
+            */
+            vertical-align: top;
+        }
+        .s2 {
+            font-size: 20px;
+            border: 1px orange solid;
+            vertical-align: bottom;
+        }
+        .s3 {
+            font-size: 20px;
+            border: 1px orange solid;
+            vertical-align: 10px;
+        }
+
+        p.picture {
+            border: 1px goldenrod solid;
+            /* 
+            引入圖片後經觀察會發現，圖片底部與 border 有間隙
+            這個間隙就是圖片的基線高，圖片與文字一樣會有基線 
+            */
+        }
+        p.picture img {
+            vertical-align: top;
+            /* 
+            間隙在排版時會造成不便
+            可以使用 vertical-align: top/middle/bottom 消除
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">Rarely can a spoonful of rice have caused such a stir. When M.K. Stalin, chief minister of Tamil Nadu, addressed the south Indian state’s legislature on September 9th, he celebrated a musty sample of the country’s humble staple. Carbon dating by an American laboratory, he said, had just proved that the rice, found in a small clay offering bowl—itself tucked inside a burial urn outside the village of Sivakalai, near the southernmost tip of India—was some 3,200 years old. This made it the earliest evidence yet found of civilisation in Tamil Nadu. The top duty of his government, the chief minister triumphantly declared, was to establish that the history of India “begins from the landscape of the Tamils”.</div>
+    <br>
+    <div class="box2">人生苦短，我用<span class="s1">ＰＹＴＨＯＮ</span><span class="s2">ＰＹＴＨＯＮ</span><span class="s3">ＰＹＴＨＯＮ</span></div>
+    <br>
+    <p class="picture"><img src="../exercise/054_layout_exercise/mons_pics/百竜ノ淵源ナルハタタヒメ.jpg" alt=""></p>
+</body>
+</html>
