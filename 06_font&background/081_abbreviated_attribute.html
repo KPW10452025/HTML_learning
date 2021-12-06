@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字體的簡寫屬性</title>
+    <style>
+        div {
+            border: 1px red solid;
+            /* 
+            font 可以設置字體相關所有屬性
+                語法
+                    font 風格 粗細 大小/行高 字體族
+                        風格：省略不寫會自動設成默認值 normal
+                        粗細：省略不寫會自動設成默認值 normal
+                        行高可以省略不寫，如果不寫，系統會自己默認
+            
+            單獨語法：
+                font-style 風格
+                font-weight 粗細
+                font-size 大小
+                line-height 行高
+                font-family 字體族
+            */
+            font: italic bold 50px/2 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>This is HTML.</div>
+</body>
+</html>
