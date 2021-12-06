@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1
+        {
+            width: 600px;
+            height: 600px;
+            border: gold 5px solid;
+            /* 
+            background-color 設置背景顏色
+            background-image 設置背景圖片
+                — 可以同時設定背景顏色和背景圖片，當 background-image 為透明圖時 background-color 就會變 background-image 的背景顏色
+                — 如果背景的圖片小於元素，則背景圖片會自動在元素中重複鋪滿整個元素背景
+                — 如果背景的圖片大於元素，將會有一部分的 background-image 無法顯示
+            */
+            background-color: green;
+            background-image: url("./img/dog02.png");
+            /* 
+            background-repeat 設置背景圖片重複的方法
+                repeat 默認值 往水平方向與垂直方向不斷重複至填滿元素
+                repeat-x 往水平方不斷重複
+                repeat-y 垂直平方不斷重複
+                no-repeat 不重複
+                round
+                space
+            */
+            background-repeat: no-repeat ;
+            /* 
+            background-position 當 background-repeat 設置為 no-repeat 時，可以用 background-position 設置圖片位置
+                可選值：要填兩個值，當填入一個值時，系統會默認另一個值為 center
+                    top 在元素的中間上方
+                    bottom 在元素的中間下方
+                    left 在元素的中間左方
+                    right 在元素的中間右方
+                    center 在元素的正中間
+                    top left / left top 默認值 左上角
+                    top right / right top 右上角
+                    bottom right / right bottom 右下角
+                    bottom left / left bottom 左下角
+                填寫兩個像素（向右，向下）
+                    只寫一個時，係痛會默認向下為 center
+            */
+            background-position: 200px 50px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
