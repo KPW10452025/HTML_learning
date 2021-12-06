@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: #f1ddde;
+        }
+        .box1
+        {
+            width: 500px;
+            height: 500px;
+            background-color: #a5c7de;
+            background-image: url("img/dog02.png");
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            /* 
+            background-size 設置背景圖片大小
+                第一個值表示寬度
+                第二個值表示高度
+                如果只寫一個值，第二個值會默認為 auto 圖片會依照原比例變化
+                可選值：
+                    cover 圖片比例不變，把元素填滿（缺點：圖片有可能無法完整顯示）
+                    contain 圖片比例不變，圖片在元素中完整顯示（缺點：元素無法被圖片填滿）
+            */
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
