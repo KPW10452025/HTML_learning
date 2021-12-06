@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1
+        {
+            width: 500px;
+            height: 500px;
+            /* 
+            background-color 設置背景顏色
+            background-image 設置背景圖片
+                — 可以同時設定背景顏色和背景圖片，當 background-image 為透明圖時 background-color 就會變 background-image 的背景顏色
+                — 如果背景的圖片小於元素，則背景圖片會自動在元素中重複鋪滿整個元素背景
+                — 如果背景的圖片大於元素，將會有一部分的 background-image 無法顯示
+            */
+            background-color: green;
+            background-image: url("./img/dog02.png");
+        }
+        .box2
+        {
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            background-image: url("./img/dog01.jpeg");
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
