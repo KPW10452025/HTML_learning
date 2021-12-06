@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: #f1ddde;
+        }
+        .box1
+        {
+            width: 500px;
+            height: 500px;
+            border: 10px #e5bf90 double;
+            padding: 10px;
+            background-color: #a5c7de;
+            /* 可以發現邊匡下面也是有背景的 */
+            
+            background-image: url("img/dog02.png");
+            background-repeat: no-repeat;
+            /* 
+            background-clip 設置背景範圍
+                可選值：
+                    border-box 默認值，背景會出現在邊匡下面
+                    padding-box 背景不會出現在邊匡下面，只會出現在內容區和內邊距
+                    content-box 背景只會出現在內容區
+            */
+            background-clip: content-box;
+            background-position: 0px 0px;
+            /* 
+            background-origin 背景圖片偏移量計算的原點
+                padding-box 默認值 background-position 從內邊距開始計算
+                content-box 背景圖片的偏移量 background-position 從內容區開始計算
+                border-box 背景圖片的偏移量 background-position 從邊匡開始計算
+            */
+            background-origin: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
