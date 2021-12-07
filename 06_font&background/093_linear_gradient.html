@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1
+        {
+            width: 200px;
+            height: 200px;
+            /* 
+            顏色漸變；注意！它是 background-image！
+                linear-gradient 線性漸變
+            */
+            background-image: linear-gradient(#ef476f, #ffd166, #06d6a0, #118ab2, #073b4c);
+        }
+        .box1a
+        {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(#ef476f 100px, #ffd166, #06d6a0, #118ab2, #073b4c);
+            /* 可以添加漸變的像素寬度 */
+        }
+        .box2
+        {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(to left, #ef476f, #ffd166, #06d6a0, #118ab2, #073b4c);
+            /* 也可以 to right, to top, to bottom（默認值） */
+        }
+        .box3
+        {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(300deg, #ef476f, #ffd166, #06d6a0, #118ab2, #073b4c);
+            /* 也可以直接寫角度 */
+        }
+        .box4
+        {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(0.7turn, #ef476f, #ffd166, #06d6a0, #118ab2, #073b4c);
+            /* 也可以寫轉幾圈 */
+        }
+    </style
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box1a">box1a</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+</body>
+</html>
