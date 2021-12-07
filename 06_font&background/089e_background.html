@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: #cdb4db;
+        }
+        .box1
+        {
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            overflow: scroll;
+            background-color: #ffc8dd;
+            background-image: url("img/dog01.jpeg");
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            background-size: 100% 100%;
+        }
+        .box3
+        {
+            width: 150px;
+            height: 150px;
+            padding: 20px;
+            border: 10px #ffafcc solid ;
+            /* 
+            background 背景的簡寫屬性
+                – position 一定要寫在 size 前面並且要加上斜線 / 
+                – origin 一定要寫在 clip 前面
+                – 除上述兩點，其他的屬性沒有書寫順序
+            */
+            background: #ffc8dd url('./img/dog02.png') center center/cover border-box content-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
