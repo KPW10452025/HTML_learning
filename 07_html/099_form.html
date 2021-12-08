@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表單</title>
+    <style>
+        body {
+            background-color: #283618;
+            color: #fefae0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        表單，是本地端與伺服器用來交互數據的手段之一
+        因為現階段沒有服務器，所以無法做交互的練習
+    -->
+
+    <!-- 
+        form 裡面的一個必須的屬性 action
+            action 表單要提交服務器的地址
+    -->
+    <form action="099_target.html">
+        <!-- 添加表單項目 -->
+        <!-- name 給數據賦予意義，同時傳遞後會在網址的最後出現 username=輸入值&password=輸入值 -->
+        <!-- 文本框 type="text" -->
+        帳號 <input type="text" name="username">
+        <br>
+        <!-- 密碼框 type="password" -->
+        密碼 <input type="password" name="password">
+        <br>
+        <!-- 單選按鈕 type="radio" -->
+        <!-- 默認點選 checked -->
+        <!-- name 與 value 的搭配，作用為用戶的回傳值，提交後網址會顯示 name="subscribe" value="y" -->
+        是否訂閱電子報？是<input type="radio" name="subscribe" value="y" checked>否<input type="radio" name="subscribe" value="n">
+        <br>
+        <!-- 多選按鈕 type="checkbox" -->
+        註冊目的？（可多選）
+        工作<input type="checkbox" name="source" value="1" checked>
+        學術<input type="checkbox" name="source" value="2">
+        家用<input type="checkbox" name="source" value="3">
+        遊戲<input type="checkbox" name="source" value="4">
+        <br>
+        <!-- 下拉式選單 -->
+        國籍 <select name="nation">
+            <option value="1">Taiwan</option>
+            <option value="2">America</option>
+            <option value="3">Canada</option>
+        </select>
+        <br>
+        <br>
+        <!-- 提交按鈕 type="submit" -->
+        <input type="submit" value="確認註冊">
+        <br>
+    </form>
+</body>
+</html>
