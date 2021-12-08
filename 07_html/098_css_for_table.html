@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #264653;
+        }
+
+        table.t1 {
+            width: 400px;
+            background-color: #2a9d8f;
+            border: 1px #e9c46a solid;
+            /* 
+            border-spacing 設定邊框距離
+            */
+            border-spacing: 1px;
+        }
+
+        table.t2 {
+            width: 400px;
+            background-color: #2a9d8f;
+            border: 1px #e9c46a solid;
+            /* 
+            因為 border-spacing: 0px 所以邊框為 1px + 1px = 2px
+            */
+            border-spacing: 0px;
+        }
+
+        table.t3 {
+            width: 400px;
+            background-color: #2a9d8f;
+            border: 1px #e9c46a solid;
+            /*
+            border-collapse: collapse; 將邊框變成 1px
+            */
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px #e9c46a solid;
+        }
+
+        table tr:nth-child(2n+1) {
+            background-color: #f4a261;
+        }
+
+        th {
+            background-color: #e76f51;
+        }
+
+        .t3 td {
+            /* 
+            height 可以設定行高
+            默認情況下，文字是垂直居中的
+            可以通過 vertical-align 設定文字垂直位置 top/middle/bottom/...
+            可以通過 text-align 設定文字水平位置 left/center/right/end/...
+            */
+            height: 50px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        /* 
+        [ 注意 ]
+            雖然 css 裡面沒有設定 hbody 標籤，但是系統會默認並自動寫上 table > tbody > tr
+            也就是說
+            table > tr:nth-child(2n+1) {
+                background-color: #f4a261;
+            }
+            以上的宣告會失敗，無效果
+            也就是說，tr 並不是 table 的子元素
+        */
+    </style>
+</head>
+
+<body>
+    <table class="t1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>45</td>
+            <td>man</td>
+        </tr>
+        <tr>
+            <td>Marry</td>
+            <td>66</td>
+            <td>woman</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>27</td>
+            <td>man</td>
+        </tr>
+        <tr>
+            <td>Cathy</td>
+            <td>35</td>
+            <td>woman</td>
+        </tr>
+        <tr>
+            <td>Jimmy</td>
+            <td>33</td>
+            <td>man</td>
+        </tr>
+    </table>
+    <br>
+    <table class="t2">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>45</td>
+            <td>man</td>
+        </tr>
+        <tr>
+            <td>Marry</td>
+            <td>66</td>
+            <td>woman</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>27</td>
+            <td>man</td>
+        </tr>
+        <tr>
+            <td>Cathy</td>
+            <td>35</td>
+            <td>woman</td>
+        </tr>
+        <tr>
+            <td>Jimmy</td>
+            <td>33</td>
+            <td>man</td>
+        </tr>
+    </table>
+    <br>
+    <table class="t3">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>45</td>
+            <td>man</td>
+        </tr>
+        <tr>
+            <td>Marry</td>
+            <td>66</td>
+            <td>woman</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>27</td>
+            <td>man</td>
+        </tr>
+        <tr>
+            <td>Cathy</td>
+            <td>35</td>
+            <td>woman</td>
+        </tr>
+        <tr>
+            <td>Jimmy</td>
+            <td>33</td>
+            <td>man</td>
+        </tr>
+    </table>
+</body>
+
+</html>
