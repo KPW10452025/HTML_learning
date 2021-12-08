@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>單表 form</title>
+</head>
+<body>
+    <form action="099_target.html">
+        <!--
+            The meaning of type="text" is the default of the form.
+        -->
+        <input type="text" name="username" value="username">
+
+        <br>
+
+        <!-- type="email"
+            The form will automatically check whether the input is an e-mail or not after pressing the submit button.
+            If the user is Mobile OS, the keyboard that pops up will be a keyboard dedicated to e-mail.
+        -->
+        <input type="email" name="email" value="abc@gmail.com">
+
+        <br>
+
+        <!-- type="email"
+            The form will automatically check whether the input is an phone number or not after pressing the submit button.
+            If the user is Mobile OS, the keyboard that pops up will be a keyboard dedicated to phone number.
+        -->
+        <input type="tel" name="tel" value="0912-345-678">
+
+        <br>
+
+        <input type="submit" value="Submit!">
+        <!-- type="reset"
+            Reset all the input int the form.
+        -->
+        <input type="reset" value="Reset!">
+        <!-- type="button"
+            Though it doesn't have any effect, it always work with JS. 
+        -->
+        <input type="button" value="Normal Button!">
+        
+        <br>
+        <br>
+        
+        <button type="submit">Submit!</button>
+        <button type="reset">Reset!</button>
+        <button type="button">Normal Button!</button>
+        <!--
+            The difference between button of input tag and button of button tag is
+                - Button tag has start and end tag. It can be applied more flexibly.
+        -->
+    </form>
+</body>
+</html>

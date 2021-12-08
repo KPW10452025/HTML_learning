@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+
+<body>
+    <form action="099_target.html" autocomplete="off">
+        <!-- ! [ autocomplete ]
+            It can set whether the form will pop out the history sheet automatically or not.
+            When we fill out some forms, it is very convenient that the form will autocomplete by the history sheets.
+            In the other hand, it's also inconvenient when we fill out the forms the pop out sheets block our vision. -->
+
+        <!-- ! [ autofocus ]
+            When the user go into this page the system will automatically activate form filling. -->
+        username<input type="text" name="username" autofocus>
+
+        <br>
+
+        email<input type="email" name="email">
+
+        <br>
+
+        tel<input type="tel" name="tel">
+
+        <br>
+        <!-- ! [ readonly ]
+            The form is readonly.
+            The data will submit. -->
+        text<input type="text" name="text" value="This is readonly." readonly>
+
+        <br>
+        <!-- ! [ disabled ]
+            The form is disabled.
+            The data won't submit. -->
+        text<input type="text" name="text" value="This is disabled." disabled>
+
+        <br>
+        <button type="submit">Submit!</button>
+        <button type="reset">Reset!</button>
+        <button type="button">Normal Button!</button>
+    </form>
+</body>
+
+</html>
