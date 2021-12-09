@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #003049;
+        }
+        .outer {
+            height: 500px;
+            background-color: #dda740;
+            border-bottom: 10px solid #ebe2b7;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .outer div {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background-color: #2b2d42;
+            border-radius: 50%;
+            animation: ball 2s forwards ease-in infinite alternate;
+        }
+        .outer .box2 {
+            animation-delay: 0.02s;
+            background-color: #03071e;
+        }
+        .outer .box3 {
+            animation-delay: 0.04s;
+            background-color: #370617;
+        }
+        .outer .box4 {
+            animation-delay: 0.06s;
+            background-color: #6a040f;
+        }
+        .outer .box5 {
+            animation-delay: 0.08s;
+            background-color: #9d0208;
+        }
+        .outer .box6 {
+            animation-delay: 0.10s;
+            background-color: #d00000;
+        }
+        .outer .box7 {
+            animation-delay: 0.12s;
+            background-color: #dc2f02;
+        }
+        .outer .box8 {
+            animation-delay: 0.14s;
+            background-color: #e85d04;
+        }
+        .outer .box9 {
+            animation-delay: 0.16s;
+            background-color: #f48c06;
+        }
+
+        @keyframes ball {
+            from {
+                margin-top: 0;
+            }
+            20%, 60%,to{
+                margin-top: 400px;
+                animation-timing-function: ease-out;
+            }
+            40% {
+                margin-top: 50px;
+            }
+            80% {
+                margin-top: 200px;
+            }
+            /* to {
+                margin-top: 400px;
+                animation-timing-function: ease-in;
+            } */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+    </div>
+</body>
+</html>
