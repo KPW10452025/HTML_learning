@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation and sprite</title>
+    <style>
+        .box1 {
+            /* width: 1472px; */
+            float: left;
+            width: 184px;
+            height: 325px;
+            background-color: #ebe2b7;
+            background-image: url(./img/walk.png);
+            animation-name: move_forward;
+            animation-duration: 0.5s;
+            animation-timing-function: steps(8);
+            animation-iteration-count: infinite;
+        }
+
+        .box2 {
+            /* width: 1472px; */
+            float: left;
+            width: 184px;
+            height: 325px;
+            background-color: #ebe2b7;
+            background-image: url(./img/walk.png);
+            /* animation-name: move_backward; */
+            /* animation-duration: 1s; */
+            /* animation-timing-function: steps(8); */
+            /* animation-iteration-count: infinite; */
+            animation: move_backward 1s steps(8) infinite;
+        }
+
+        @keyframes move_forward {
+            from {
+                background-position: 0px 0px;
+            }
+            to {
+                background-position: -1472px 0px;
+            }
+        }
+
+        @keyframes move_backward {
+            from {
+                background-position: -1472px 0px;
+            }
+            to {
+                background-position: 0px 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
