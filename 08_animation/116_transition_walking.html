@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition 過度</title>
+    <style>
+        .box1 {
+            width: 184px;
+            height: 325px;
+            background-color: #eae2b7;
+            margin: 0 auto;
+            background-image: url("./img/walk.png");
+            background-position: 0 0;
+            transition: 0.5s steps(8);
+        }
+        .box1:hover {
+            background-position: -1472px 0px;
+            background-color: #fcbf49;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
