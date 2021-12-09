@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation walking</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: #ebe2b7;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #dda740;
+            /* animation-name 想導入的動畫名稱 */
+            animation-name: anime_name;
+            /* animation-duration 播放動畫一次循環所需要的時間 */
+            animation-duration: 4s;
+            /* animation-timing-function 循環方法 */
+            animation-timing-function: ease-in-out;
+            /* animation-iteration-count 循環幾次 */
+            animation-iteration-count: infinite;
+            /* animation-direction 播放方向 */
+            /* normal 順播、reverse 倒播、alternate 順播倒播 */
+            animation-direction:alternate;
+        }
+        .box1:hover .box2{
+            animation-play-state: paused;
+        }
+        .box3 {
+            width: 100px;
+            height: 100px;
+            margin-left: 100px;
+            background-color: #ce6a05;
+            animation-name: anime_name;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-iteration-count: 4;
+            animation-direction:alternate;
+            /* 
+            animation-fill-mode
+                none 動畫播放完畢後，回到非播放時的位置
+                backwards 動畫播放完畢後，停在播放狀態的起始的位置
+                forwards 動畫播放完畢後，停在播放狀態的最後的位置
+                both 結合 backwards forwards
+            */
+            animation-fill-mode: none;
+        }
+        .box1:hover .box2{
+            /* 動畫的狀態 */
+            /* running 播放 paused 暫停 */
+            animation-play-state: paused;
+        }
+        .box1:hover .box3 {
+            animation-iteration-count: infinite;
+        }
+
+        /* 使用 @keyframes 創造一個動畫公式 */
+        /* anime_name 是這個公式的名字，可以任意取名 */
+        @keyframes anime_name {
+            /* from 動畫開始的模式 */
+            from {
+                margin-left: 0;
+            }
+            /* to 動畫結束的模式 */
+            to {
+                margin-left: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
