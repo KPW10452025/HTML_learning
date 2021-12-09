@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition 過度</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #1d3557;
+
+        }
+        .box1 {
+            width: 600px;
+            height: 600px;
+            background-color: #e63946;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            margin-left: 0px;
+            background-color: #f1faee;
+            transition: all 0.5s;
+            /* 
+                過度 transition
+                    — 通過過度，可以指定一個屬性發生變化時的變化方式
+                    — 通過過度，可以創建一些非常好的效果，提升用戶體驗
+                    transition-property: 指定要過度的屬性;
+                        — 要指定多個屬性時，用英文逗號隔開
+                        — 可以直接使用 all 指定所有屬性
+                        — 大部分屬性都支持過度效果（像素、長度、角度、顏色...等，「有效數值」能計算的屬性）
+                    transition-duration: 指定過度效果的持續時間;
+                        – property 與 duration 必須互相搭配才能有過度效果
+                        — 屬性的以搭配不同過度時間，多個項目用英文逗號分開
+                            transition-property: width, height
+                            transition-duration: 1s, 2s
+                    transition-timing-function: 過度的時序函數，過度的動畫方法;
+                        — 語法：https://developer.mozilla.org/zh-TW/docs/Web/CSS/transition-timing-function
+                    transition-delay: 將過度效果延遲，需要等一段時間後才會啟動過度效果;
+            */
+            /* apple */
+        }
+        .box1:hover .box2 {
+            width: 200px;
+            height: 200px;
+            margin-left: 100%;
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
