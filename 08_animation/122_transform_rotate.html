@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .outer {
+            background-color: pink;
+            perspective: 1000px
+        }
+        img {
+
+        }
+        .a1 {
+            width: 100px;
+            height: 100px;
+            background-color: #7400b8;
+            transition: 0.5s;
+            margin: 0 auto;
+        }
+        .outer:hover .a1 {
+            transform: rotateZ(80deg);
+        }
+        .a2 {
+            width: 100px;
+            height: 100px;
+            background-color: #6930c3;
+            transition: 0.5s;
+            margin: 0 auto;
+        }
+        .outer:hover .a2 {
+            transform: rotateY(80deg);
+        }
+        .a3 {
+            width: 100px;
+            height: 100px;
+            background-color: #5e60ce;
+            transition: 0.5s;
+            margin: 0 auto;
+        }
+        .outer:hover .a3 {
+            transform: rotateX(80deg);
+        }
+        .a4 {
+            width: 100px;
+            height: 100px;
+            background-color: #5390d9;
+            transition: 0.5s;
+            margin: 0 auto;
+            background-image: url("./img/geek.jpeg");
+            background-size: contain;
+            /* 不顯示背面 */
+            /* backface-visibility: hidden; */
+        }
+        .outer:hover .a4 {
+            transform: rotateY(180deg) translateZ(200px);
+        }
+        .a5 {
+            width: 100px;
+            height: 100px;
+            background-color: #4ea8de;
+            transition: 0.5s;
+            margin: 0 auto;
+        }
+        .outer:hover .a5 {
+            transform: translateZ(200px) rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="a1"></div>
+        <div class="a2"></div>
+        <div class="a3"></div>
+        <div class="a4"></div>
+        <div class="a5"></div>
+    </div>
+    
+</body>
+</html>
