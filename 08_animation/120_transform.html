@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #d62727;
+            margin: 0 auto;
+            margin-top: 200px;
+            /* transform: translateX(); 沿 X 軸方向為宜 */
+            /* transform: translateY(); 沿 Y 軸方向為宜 */
+            /* transform: translateZ(); 沿 Z 軸方向為宜 */
+            transition: transform 0.1s ;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #d62727;
+            margin: 0 auto;
+            transition: transform 0.1s ;
+        }
+        .box1:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(36, 36, 36, .8);
+            background-color: #ebe2b7;
+        }
+        .box2:hover {
+            transform: translateY(5px);
+            box-shadow: 0 0 20px rgba(36, 36, 36, .8);
+            background-color: #ebe2b7;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
