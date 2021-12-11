@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .clock {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background-color: #f7ede2;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 50%;
+            margin: 100px auto;
+            border: 5px #f5cac3 solid
+        }
+        .box_sec {
+            width: 400px;
+            height: 400px;
+            /* background-color: #f7ede2; */
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: run 1s steps(60) infinite
+        }
+        .sec {
+            width: 2px;
+            height: 190px;
+            background-color: #f28482;
+            margin: 0 auto;
+            position: relative;
+            top: 50px;
+        }
+        .box_min {
+            width: 400px;
+            height: 400px;
+            /* background-color: #f7ede2; */
+            border-radius: 50%;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: run 60s steps(60) infinite
+        }
+        .min {
+            width: 10px;
+            height: 180px;
+            background-color: #84a59d;
+            margin: 0 auto;
+            position: relative;
+            top: 20px;
+        }
+        .box_hour {
+            width: 400px;
+            height: 400px;
+            /* background-color: #f7ede2; */
+            border-radius: 50%;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: run 720s linear infinite
+        }
+        .hour {
+            width: 15px;
+            height: 100px;
+            background-color: #f6bd60;
+            margin: 0 auto;
+            position: relative;
+            top: 100px;
+        }
+        @keyframes run {
+            from {
+                transform: rotateZ(0);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="box_sec">
+            <div class="sec"></div>
+        </div>
+        <div class="box_min">
+            <div class="min"></div>
+        </div>
+        <div class="box_hour">
+            <div class="hour"></div>
+        </div>
+    </div>
+</body>
+</html>
