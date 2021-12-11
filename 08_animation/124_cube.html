@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            vertical-align: top;
+        }
+        .cube {
+            width: 200px;
+            height: 200px;
+            /* background-color: #2a9d8f; */
+            margin: 100px auto;
+        }
+        .cube > div {
+            width: 200px;
+            height: 200px;
+            /* 將元素變透明 */
+            position: absolute;
+        }
+        .box1 {
+            transform: perspective(10cm) rotateY(90deg) translateZ(100px);
+        }
+        .box2 {
+            transform: perspective(10cm) rotateY(-90deg) translateZ(100px);
+        }
+        .box3 {
+            transform: perspective(10cm) rotateX(90deg) translateZ(100px);
+        }
+        .box4 {
+            transform: perspective(10cm) rotateX(-90deg) translateZ(100px);
+        }
+        .box5 {
+            transform: perspective(10cm) rotateY(180deg) translateZ(100px);
+            transition: all 1s;
+        }
+        /* .box6 {
+            transform: perspective(10cm) rotateY(0deg) translateZ(100px);
+        } */
+        .cube:hover .box5 {
+            transform: perspective(10cm) rotateY(180deg) translateZ(-100px);
+            opacity: .5;
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div>
+            <img class="box1" src="./img/mon1.jpg">
+        </div>
+        <div>
+            <img class="box2" src="./img/mon2.jpg">
+        </div>
+        <div>
+            <img class="box3" src="./img/mon3.jpg">
+        </div>
+        <div>
+            <img class="box4" src="./img/mon4.jpg">
+        </div>
+        <div>
+            <img class="box5" src="./img/mon5.jpg">
+        </div>
+        <!-- <div>
+            <img class="box6" src="./img/mon6.jpg">
+        </div> -->
+    </div>
+</body>
+</html>
