@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #264653;
+            transition: .5s;
+            margin: 10px auto;
+        }
+
+        .box1:hover {
+            transform: scaleX(2)
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #2a9d8f;
+            transition: .5s;
+            margin: 10px auto;
+        }
+
+        .box2:hover {
+            transform: scaleY(2)
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: #e9c46a;
+            transition: .5s;
+            margin: 10px auto;
+        }
+
+        .box3:hover {
+            transform: scale(2)
+        }
+
+        .img_wrapper {
+            width: 200px;
+            height: 200px;
+            border: #f4a261 5px solid;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+
+        img {
+            transition: 0.2s;
+        }
+
+        .img_wrapper:hover img {
+            transform: scale(1.1);
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: #e76f51;
+            transition: .5s;
+            margin: 10px auto;
+            /* 設定變形原點 默認值為 center */
+            transform-origin: 50px 215px;
+        }
+
+        .box4:hover {
+            transform: scale(2)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="img_wrapper">
+        <img src="./img/geek.jpeg" width="100%" alt="">
+    </div>
+    <div class="box4"></div>
+</body>
+
+</html>
