@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css 原生也支持變量的設置 */
+        html {
+            --web_default_color: #2a9d8f;
+            --length01: calc(300px/2)
+            /* 
+            calc() 計算函數
+            */
+        }
+
+        .box1 {
+            width: var(--length01);
+            height: var(--length01);
+            background-color: var(--web_default_color);
+        }
+        .box2 {
+            width: var(--length01);
+            height: var(--length01);
+            color: var(--web_default_color);
+        }
+        .box3 {
+            width: var(--length01);
+            height: var(--length01);
+            border: 1px var(--web_default_color) solid;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        less 是 css 的預處理語言
+            — less 是 css 增強版，通過 less 可以編寫更精簡的代碼，並實現更強大的樣式
+            – 在 less 中添加了許多新特性，像是對變量的支持，對 mixin 的支持...等
+            — less 的語法大體上和 css 語法一致，但 less 中增添了許多對 css 的擴展，所以瀏覽器無法直接執行 less 代碼
+            — 要執行 less 要先將 less 轉換為 css 然後再由瀏覽器執行
+
+        在 VSCode 安裝 easy less 插件
+        創建一個副檔名為 .less 的檔案
+        當在 .less 裡面完成編碼並儲存後，系統會自動生成一個同檔名但不檔名為 .css 的檔案
+    -->
+
+    <!-- .box$*3 -->
+    <div class="box1">apple</div>
+    <div class="box2">apple</div>
+    <div class="box3">apple</div>
+</body>
+</html>
