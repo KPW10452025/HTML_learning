@@ -1,0 +1,60 @@
+// 雙斜線是 less 的註記寫法
+// 雙斜線註釋只能用在 less 並且是單行註記
+// 雙斜線註記不會被轉譯到 css 文檔中
+
+/* 
+    less 文檔中也能使用 css 文檔的註記法：斜線搭配米字號
+    此方法特點為：
+        可以多行註記
+        會自動轉譯到 css 文檔中
+*/
+
+// less 變量
+// 在變量中可以儲存一個任意的值，並且可以在需要時，任意修改已儲存的變量值
+// 變量語法 @變量名稱
+
+@a:200px;
+@b:black;
+@c:box5;
+@d:example_file;
+
+body {
+    background-color: #fec5bb;
+}
+.box1 {
+    width: 800px;
+    height: $width; // $變量 複製上一個值
+    background-color: @b; // 設定好的變量直接就能使用
+    .box2 {
+        width: 2*@a; // 設定好的變量直接就能使用，並且可以做運算
+        height: @a;
+        background-color: red;
+    }
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+    .box4 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        // 若設定好的變量作為類名，或者一部分直使用時，必須以 @{變量名}的形式使用
+        .@{c} {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            background-image: url("@{d}/example.png");
+
+            @e:10px;
+            @e:50px;
+            .box6 {
+                width: @e; // 變量發生重疊時，優先使用近的變量值
+                height: @f; // 變量可以先使用，之後再設定變量值
+                background-color: @b;
+            }
+        }
+    }
+}
+
+@f:50px; // 變量已在上面先使用，後面再設定變量值是可以的
