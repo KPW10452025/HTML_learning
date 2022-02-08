@@ -1,0 +1,122 @@
+.b1 {
+    width: 500px;
+    height: 500px;
+    background-color: green;
+    .b2 {
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+    }
+
+    // & 表示外層的父元素
+    &:hover { // 給 b1 設定一個 hover 改變顏色
+        background-color: darkgreen;
+    }
+
+    // 子元素選擇器
+    >.b3 {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        &:hover {
+            background-color: pink;
+        }
+    }
+}
+
+// .b1 {
+//     width: 500px;
+//     height: 500px;
+//     background-color: green;
+// }
+// .b1 .b2 {
+//     width: 200px;
+//     height: 200px;
+//     background-color: brown;
+// }
+// .b1:hover {
+//     background-color: darkgreen;
+// }
+// .b1 > .b3 {
+//     width: 150px;
+//     height: 150px;
+//     background-color: red;
+// }
+// .b1 > .b3:hover {
+//     background-color: pink;
+// }
+
+// ======================================================
+
+.b4 {
+    width: 100px;
+    height: 100px;
+    border: solid black 10px;
+}
+
+// extend() 此選擇器可以把目標的特性引用過來，並在 {} 中進行擴充
+.b5:extend(.b4) {
+    background-color: blue;
+}
+
+// .b4,
+// .b5 {
+//     width: 100px;
+//     height: 100px;
+//     border: solid black 10px;
+// }
+// .b5 {
+//     background-color: blue;
+// }
+
+// ======================================================
+
+// 完全複製 .b1 的特性 
+// 小括號 () 具有混合選擇器 mixin 的特性
+.b6 {
+    .b1();
+}
+
+// .b6 {
+//     width: 500px;
+//     height: 500px;
+//     background-color: green;
+// }
+// .b6 .b2 {
+//     width: 200px;
+//     height: 200px;
+//     background-color: brown;
+// }
+// .b6:hover {
+//     background-color: darkgreen;
+// }
+// .b6 > .b3 {
+//     width: 150px;
+//     height: 150px;
+//     background-color: red;
+// }
+// .b6 > .b3:hover {
+//     background-color: pink;
+// }
+
+// ======================================================
+
+// 混合函數：小括號 () 
+// 在選擇器後面添加小括號 () 時，less 不會翻譯到 css 文檔中
+// 此效果為設定一變數，將其設定為一個選擇器，別且可以設定樣式
+.b_example() {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+}
+
+// 將設定好的變數（選擇器與樣式）直接引用
+.b7 {
+    .b_example
+}
+
+// .b7 {
+//     width: 80px;
+//     height: 80px;
+//     background-color: red;
+// }

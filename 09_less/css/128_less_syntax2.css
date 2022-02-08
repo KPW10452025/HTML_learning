@@ -1,0 +1,56 @@
+.b1 {
+  width: 500px;
+  height: 500px;
+  background-color: green;
+}
+.b1 .b2 {
+  width: 200px;
+  height: 200px;
+  background-color: brown;
+}
+.b1:hover {
+  background-color: darkgreen;
+}
+.b1 > .b3 {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+}
+.b1 > .b3:hover {
+  background-color: pink;
+}
+.b4,
+.b5 {
+  width: 100px;
+  height: 100px;
+  border: solid black 10px;
+}
+.b5 {
+  background-color: blue;
+}
+.b6 {
+  width: 500px;
+  height: 500px;
+  background-color: green;
+}
+.b6 .b2 {
+  width: 200px;
+  height: 200px;
+  background-color: brown;
+}
+.b6:hover {
+  background-color: darkgreen;
+}
+.b6 > .b3 {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+}
+.b6 > .b3:hover {
+  background-color: pink;
+}
+.b7 {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
