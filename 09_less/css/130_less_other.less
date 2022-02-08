@@ -1,0 +1,34 @@
+// 在 less 中，可以用 @import 引入其他 less 文檔
+// 此功能的實際應用：可以對 less 文件做一個模塊化的處理
+// 可以同時創建多個 less 文件，每一個 less 文件都有自己的功能：負責變量、負責動畫效果、負責整合、負責佈局...等
+// 這樣會方便維護，不會把所有的效果全部寫在同一個 css 文檔中
+@import "129_mixin_function.less";
+
+// 在 less 中，所有數值都可以進行運算
+.box4 {
+    width: 100px + 50px;
+    height: 100px * 3;
+    background-color: #bfa;
+}
+
+// 進階 less 技巧：生成 css.map 查詢用文檔
+// 當使用 less 生成 css 後，在瀏覽器使用檢查時，style 表格中顯示的設置文檔的位置通常都會顯示 css 的位置
+// 但如果要進行修該時應該是在 less 中進行修改，而非 css 中修改
+// 這時候就需要有一個功能，能對應 less 與 css 對應的位置
+// 插件 easy less 有提供這樣的功能：css.map
+
+// 在 Easy LESS 安裝頁面中找到 Project-Wide & Global Configuration
+// 複製代碼
+// "less.compile": {
+//     "compress": true, // true => remove surplus whitespace
+//     "sourceMap": true, // true => generate source maps (.css.map files)
+//     "out": false // false => DON'T output .css files (overridable per-file, see below)
+// }
+// 開啟 vscode 的設定後，點選「延伸模組」、點選「Easy LESS configuration」、點選「在 setting.json 內編輯」
+// 開啟 json 檔後，將剛剛複製的編碼貼上
+// compress 生成的文檔是否壓縮成一行？可壓可不壓
+// sourceMap 是否開啟 sourceMap 功能？true 開啟
+// out 是否生成檔案？true 是
+
+// 當 less 文檔存檔的同時，系統會自動生成一個 .css.map 的文檔
+// 此時在瀏覽器檢查代碼時，style 位置顯示將不再是 css 而會自動對應到 less 上
