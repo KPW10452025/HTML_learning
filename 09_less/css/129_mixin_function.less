@@ -1,0 +1,53 @@
+// 混合函數，在 JS 中經常使用
+// 在混合函數中，可以直接設置變量
+
+.style01(@w01, @h01, @bg-color01) {
+    width: @w01;
+    height: @h01;
+    border: solid 1px @bg-color01;
+}
+
+.box1 {
+    .style01(100px, 120px, #bfa)
+    //可以按照順序傳入函數值
+}
+
+.box2 {
+    .style01(@h01:70px, @bg-color01:green, @w01:80px)
+    //亦可不按照順序傳入函數值，但要指定函數
+}
+
+// css 轉譯後效果：
+
+// .box1 {
+//     width: 100px;
+//     height: 120px;
+//     border: solid 1px #bfa;
+// }
+
+// .box2 {
+//     width: 80px;
+//     height: 70px;
+//     border: solid 1px green;
+// }
+
+// ========================================================================
+
+// 亦可先設定「默認值」
+.style02(@w02:50px, @h02:50px, @bg-color02:orange) {
+    width: @w02;
+    height: @h02;
+    border: solid 1px @bg-color02;
+}
+
+.box3 {
+    .style02();
+}
+
+// css 轉譯後效果：
+
+// .box3 {
+//     width: 50px;
+//     height: 50px;
+//     border: solid 1px orange;
+// }
