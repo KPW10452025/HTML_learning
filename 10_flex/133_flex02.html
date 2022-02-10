@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* 重要觀念：
+                看到 justify 的通常都是調整「主軸（水平軸）」關係屬性
+                看到 align 的通常都是調整「輔軸（垂直軸）」關係屬性
+        */
+        .ul1 {
+            width: 600px;
+            height: 1000px;
+            border: 10px solid #735183;
+            display: flex;
+            flex-flow: row wrap; /* 自動換行 */
+            /* align-items 
+                設定元素在輔軸上如何對其
+                設定元素間的關係
+                    stretch 默認值，將元素的高度設定為相同的值
+                    flex-start 元素不會拉伸，並且沿著輔軸起點對齊（輔軸的對齊方向為由上而下）
+                    flex-end 元素不會拉伸，並且沿著輔軸終點對齊
+                    center 居中對齊 
+                    baseline 文字基線對齊
+            */
+            align-items: flex-start;
+
+            /* align-content 
+                輔軸空白空間的分佈
+                    flex-start
+                    flex-end
+                    center
+                    space-around
+                    space-between
+            */
+            align-content: space-between;
+        }
+
+        .li1 {
+            width: 200px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .li1:nth-child(1) {
+            background-color: #5577DF;
+            /* align-self 
+                用來覆蓋當前彈性元素的 align-items
+            */
+            align-self: flex-end;
+        }
+
+        .li1:nth-child(2) {
+            background-color: #41B1E3;
+        }
+
+        .li1:nth-child(3) {
+            background-color: #ADFF17;
+        }
+        
+        .li1:nth-child(4) {
+            background-color: #402F28;
+        }
+
+        .li1:nth-child(5) {
+            background-color: #701439;
+        }
+        /* ================================================================================================ */
+
+        .ul2 {
+            width: 300px;
+            height: 300px;
+            border: 10px solid #735183;
+            display: flex;
+            align-items: center; /*（輔軸）垂直對齊 */
+            justify-content: center; /*（主軸）水平對齊 */
+        }
+
+        .li2 {
+            width: 150px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .li2:nth-child(1) {
+            background-color: #5577DF;
+        }
+    </style>
+</head>
+<body>
+    <ul class="ul1">
+        <li class="li1">1.0</li>
+        <li class="li1">2.0
+            <div>2.1</div>
+            <div>2.2</div>
+        </li>
+        <li class="li1">3.0
+            <div>3.1</div>
+            <div>3.2</div>
+            <div>3.3</div>
+        </li>
+        <li class="li1">4.0
+            <div>4.1</div>
+        </li>
+        <li class="li1">5.0
+            <div>5.1</div>
+            <div>5.2</div>
+        </li>
+    </ul>
+    <br>
+    <ul class="ul2">
+        <li class="li2">水平居中且垂直居中</li>
+    </ul>
+</body>
+</html>
