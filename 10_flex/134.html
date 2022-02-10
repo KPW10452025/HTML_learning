@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彈性元素上的樣式</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* 
+            flex-grow 控制彈性元素在主軸上的「伸長」屬性
+            flex-shrink 控制彈性元素在主軸上的「縮短」屬性
+            flex-basis 控制彈性元素在主軸上的「基礎長度」屬性
+        */
+        /* ======================================================= */
+        .ul1 {
+            border: 10px solid #2E558C;
+            width: 600px;
+        }
+
+        .li1 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        .li1:nth-child(1) {
+            background-color: #777C3A;
+        }
+
+        .li1:nth-child(2) {
+            background-color: #D7C384;
+        }
+
+        .li1:nth-child(3) {
+            background-color: #B77306;
+        }
+        /* ======================================================= */
+        .ul2 {
+            border: 10px solid #2E558C;
+            width: 600px;
+            
+            /* 將 ul2 設為彈性盒 */
+            display: flex;
+        }
+
+        .li2 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+            /* flex-grow 設定元素在主軸上的伸長係數 */
+            flex-grow: 1;
+        }
+
+        .li2:nth-child(1) {
+            background-color: #777C3A;
+        }
+
+        .li2:nth-child(2) {
+            background-color: #D7C384;
+        }
+
+        .li2:nth-child(3) {
+            background-color: #B77306;
+        }
+        /* ======================================================= */
+        .ul3 {
+            border: 10px solid #2E558C;
+            width: 200px;
+            
+            /* 將 ul2 設為彈性盒 */
+            display: flex;
+        }
+
+        .li3 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+            /* flex-shrink 設定元素在主軸上的壓縮係數 */
+            flex-shrink: 1;
+        }
+
+        .li3:nth-child(1) {
+            background-color: #777C3A;
+        }
+
+        .li3:nth-child(2) {
+            background-color: #D7C384;
+        }
+
+        .li3:nth-child(3) {
+            background-color: #B77306;
+        }
+        /* ======================================================= */
+        .ul4 {
+            border: 10px solid #2E558C;
+            width: 600px;
+            
+            /* 將 ul2 設為彈性盒 */
+            display: flex;
+        }
+
+        .li4 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+            /* flex-basis 設定元素在主軸上的基礎長度 */
+            /* flex-basis 會覆蓋原本元素自己設定的 width */
+            flex-basis: 150px;
+        }
+
+        .li4:nth-child(1) {
+            background-color: #777C3A;
+        }
+
+        .li4:nth-child(2) {
+            background-color: #D7C384;
+        }
+
+        .li4:nth-child(3) {
+            background-color: #B77306;
+        }
+        /* ======================================================= */
+        .ul5 {
+            border: 10px solid #2E558C;
+            width: 600px;
+            
+            /* 將 ul2 設為彈性盒 */
+            display: flex;
+        }
+
+        .li5 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+            /* flex 可以設置彈性元素的三個樣式：伸長、縮短、基礎長度 */
+            /* initial 0 1 auto */
+            /* auto 1 1 auto */
+            /* none 0 0 auto */
+            flex: auto;
+        }
+
+        .li5:nth-child(1) {
+            background-color: #777C3A;
+        }
+
+        .li5:nth-child(2) {
+            background-color: #D7C384;
+        }
+
+        .li5:nth-child(3) {
+            background-color: #B77306;
+        }
+        /* ======================================================= */
+        .ul6 {
+            border: 10px solid #2E558C;
+            width: 600px;
+            
+            /* 將 ul2 設為彈性盒 */
+            display: flex;
+        }
+
+        .li6 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+
+            flex: initial;
+        }
+
+        .li6:nth-child(1) {
+            background-color: #777C3A;
+            /* order 可以設定元素的「順序」 */
+            order: 3;
+        }
+
+        .li6:nth-child(2) {
+            background-color: #D7C384;
+            order: 1;
+        }
+
+        .li6:nth-child(3) {
+            background-color: #B77306;
+            order: 2;
+        }
+        /* ======================================================= */
+    </style>
+</head>
+<body>
+    <i>非彈性容器</i>
+    <ul class="ul1">
+        <li class="li1">1.0</li>
+        <li class="li1">2.0</li>
+        <li class="li1">3.0</li>
+    </ul>
+    <br>
+    <i>彈性容器</i>
+    <br>
+    <i>元素設定 flex-grow:1 </i>
+    <ul class="ul2">
+        <li class="li2">1.0</li>
+        <li class="li2">2.0</li>
+        <li class="li2">3.0</li>
+    </ul>
+    <br>
+    <i>彈性容器</i>
+    <br>
+    <i>元素設定 flex-shrink:1 </i>
+    <ul class="ul3">
+        <li class="li3">1.0</li>
+        <li class="li3">2.0</li>
+        <li class="li3">3.0</li>
+    </ul>
+    <br>
+    <i>彈性容器</i>
+    <br>
+    <i>元素設定 flex-basis:150px </i>
+    <ul class="ul4">
+        <li class="li4">1.0</li>
+        <li class="li4">2.0</li>
+        <li class="li4">3.0</li>
+    </ul>
+    <br>
+    <i>彈性容器</i>
+    <br>
+    <i>元素設定 flex:auto </i>
+    <ul class="ul5">
+        <li class="li5">1.0</li>
+        <li class="li5">2.0</li>
+        <li class="li5">3.0</li>
+    </ul>
+    <br>
+    <i>彈性容器</i>
+    <br>
+    <i>元素設定 order 改變排列順序 </i>
+    <ul class="ul6">
+        <li class="li6">1.0</li>
+        <li class="li6">2.0</li>
+        <li class="li6">3.0</li>
+    </ul>
+</body>
+</html>
