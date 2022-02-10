@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .ul1 {
+            width: 500px;
+            border: 10px solid #735183;
+            display: flex;
+            /* flex-direction: row; 設置彈性盒中的彈性元素的排列方式 */
+            /* flex-wrap 設置彈性盒中的彈性元素是否自動換行 
+                    nowrap 默認值：不會自動換行
+                    wrap 自動換行，並且彈性容器會自動增加 height
+                    wrap-reverse 自動換行，反向排列
+            */
+            flex-wrap: wrap-reverse;
+
+        }
+
+        .li1 {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .li1:nth-child(1) {
+            background-color: #5577DF;
+        }
+
+        .li1:nth-child(2) {
+            background-color: #41B1E3;
+        }
+
+        .li1:nth-child(3) {
+            background-color: #ADFF17;
+        }
+
+        /* =========================================================== */
+
+        .ul2 {
+            width: 1000px;
+            border: 10px solid #FEE89F;
+            display: flex;
+            /* 
+            justify-content 如何分配「主軸」上的空白
+                flex-start
+                flex-end
+                center
+                space-around
+                space-evenly
+                space-between
+            */
+            justify-content: space-between;
+        }
+
+        .li2 {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .li2:nth-child(1) {
+            background-color: #C59169;
+        }
+
+        .li2:nth-child(2) {
+            background-color: #C26141;
+        }
+
+        .li2:nth-child(3) {
+            background-color: #FE8638;
+        }
+    </style>
+</head>
+<body>
+    <ul class="ul1">
+        <li class="li1">apply</li>
+        <li class="li1">banana</li>
+        <li class="li1">charry</li>
+    </ul>
+    <br>
+    <ul class="ul2">
+        <li class="li2">apply</li>
+        <li class="li2">banana</li>
+        <li class="li2">charry</li>
+    </ul>
+</body>
+</html>
