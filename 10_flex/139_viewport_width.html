@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Document</title>
+    <style>
+        .box1 {
+            /* width: 375px; */
+            width: 100vw;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 不同設備的完美 viewport 是不一樣的 -->
+    <!-- iphone se 375 -->
+    <!-- iphone xr 414 -->
+    <!-- iphone 12pro 390 -->
+    <!-- 由於不同設備的視窗和像素比不同，所以同樣的 375 像素在不同設備下的意義也不一樣 -->
+    <!-- 所以在移動端的網頁開發，就不能再使用 px 進行佈局 -->
+    <!-- vw 表示窗口的寬度（viewport width） -->
+        <!-- 100vw 表示一個視窗寬度 -->
+        <!-- 這個單位永遠相當於視窗寬度進行計算 -->
+        
+        <!-- 目前常見設計圖寬度 -->
+            <!-- 750px 1125px (都是 375 的倍數) -->
+        
+        <!-- 假設設計圖像素為 750px  在使用 vw 的條件下，如何創建 48px x 35px 大小的元素？ -->
+        <!-- 100vw = 750px(設計圖像素) -->
+        <!-- 6.4vw = 48px -->
+        <!-- 4.6667vw = 35px -->
+        <!-- 可以發現，這樣使用很不方便 -->
+    <div class="box1"></div>
+</body>
+</html> 
